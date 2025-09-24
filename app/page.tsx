@@ -14,15 +14,17 @@ export default function Home() {
     console.log("[v0] isExpanded set to true")
     setTimeout(() => {
       setShowWebsite(true)
-      console.log("[v0] showWebsite set to true after 800ms")
-    }, 800) // Card finishes fading out, then website appears
+      // Scroll to top when website appears
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      console.log("[v0] showWebsite set to true after 400ms")
+    }, 400) // Card finishes fading out, then website appears
   }
 
   console.log("[v0] Page render - isExpanded:", isExpanded, "showWebsite:", showWebsite)
 
   return (
     <div className="relative min-h-screen">
-      <BusinessCard onExpand={handleExpand} isExpanded={isExpanded} />
+      {!showWebsite && <BusinessCard onExpand={handleExpand} isExpanded={isExpanded} />}
       <PortfolioWebsite isVisible={showWebsite} />
     </div>
   )

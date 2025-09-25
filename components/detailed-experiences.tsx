@@ -173,7 +173,7 @@ export default function DetailedExperiences({ isVisible = false, onClose }: Deta
 
                       <div className="space-y-6">
                         <div>
-                          <p className="text-base sm:text-lg text-foreground font-sans elegant-body leading-relaxed">
+                          <p className="text-base sm:text-lg text-foreground font-serif font-light elegant-body leading-relaxed">
                             {exp.detailedDescription}
                           </p>
                         </div>
@@ -198,7 +198,7 @@ export default function DetailedExperiences({ isVisible = false, onClose }: Deta
                               {exp.achievements.map((achievement: string, achievementIndex: number) => (
                                 <li key={achievementIndex} className="flex items-start">
                                   <span className="text-foreground mr-2">•</span>
-                                  <span className="text-sm sm:text-base text-foreground font-sans elegant-body">{achievement}</span>
+                                  <span className="text-sm sm:text-base text-foreground font-serif font-light elegant-body">{achievement}</span>
                                 </li>
                               ))}
                             </ul>

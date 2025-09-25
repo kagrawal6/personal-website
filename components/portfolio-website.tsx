@@ -262,20 +262,20 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                 <img
                   src="/images/profile-improved.jpg"
                   alt="Kushal Agrawal"
-                  className="w-56 sm:w-64 lg:w-full aspect-square object-cover rounded-lg border border-border"
+                  className="w-48 sm:w-56 lg:w-full aspect-square object-cover rounded-lg border border-border"
                   style={{ objectPosition: "center 30%" }}
                 />
               </div>
             </div>
             <div className="lg:w-2/3">
               <div className="space-y-4 sm:space-y-5">
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-sans elegant-body">
+                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
                   I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity is what first pulled me into technology, the idea that imagination and engineering could shape the world around us.
                 </p>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-sans elegant-body">
+                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
                   I am now a 4th-year Computer Engineering and Computer Science student at UW–Madison, currently on a co-op with Endress+Hauser USA where I work on Netilion, their IIoT platform, including gateways and Bluetooth connectivity features. Through my courses and projects I have been exploring hardware-dependent code, parallel performance tuning, and how modern AI tools are built from a systems perspective.
                 </p>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-sans elegant-body">
+                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
                   For me, it is about chasing the questions that keep me curious and turning those answers into tools that make life and work easier for others, and in doing so, shaping technology that moves us closer to the future.
                 </p>
               </div>
@@ -327,7 +327,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </h4>
-                  <p className="text-sm sm:text-base text-foreground font-sans elegant-body leading-relaxed">
+                  <p className="text-sm sm:text-base text-foreground font-serif font-light elegant-body leading-relaxed">
                     {exp.description}
                   </p>
                   <div className="mt-3 text-xs text-foreground opacity-60 font-sans">
@@ -344,7 +344,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
             Projects
           </h2>
           <div className="text-center bg-card p-6 border border-border rounded-lg">
-            <p className="text-base text-muted-foreground font-sans">Coming soon - showcasing innovative projects</p>
+            <p className="text-base text-muted-foreground font-serif font-light">Coming soon - showcasing innovative projects</p>
           </div>
         </section>
 
@@ -361,7 +361,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                 <h3 className="text-lg font-serif font-bold text-card-foreground mb-2 elegant-heading">
                   University of Wisconsin-Madison
                 </h3>
-                <h4 className="text-sm text-muted-foreground mb-3 font-sans">BS Computer Engineering</h4>
+                <h4 className="text-sm text-muted-foreground mb-3 font-serif font-light">BS Computer Engineering</h4>
                 <div className="flex flex-wrap gap-2 text-xs font-mono">
                   <span className="bg-foreground text-background px-2 py-1 border border-foreground">2022-2026</span>
                   <span className="bg-foreground text-background px-2 py-1 border border-foreground">GPA: 3.8/4.0</span>
@@ -399,7 +399,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                   <div className="space-y-5">
                     <div>
                       <h4 className="text-base font-serif text-foreground mb-3 elegant-heading">Overview</h4>
-                      <p className="text-sm text-foreground font-sans elegant-body leading-relaxed">
+                      <p className="text-sm text-foreground font-serif font-light elegant-body leading-relaxed">
                         {selectedExperience.detailedDescription}
                       </p>
                     </div>
@@ -424,7 +424,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                           {selectedExperience.achievements.map((achievement: string, index: number) => (
                             <li key={index} className="flex items-start">
                               <span className="text-foreground mr-2">•</span>
-                              <span className="text-sm text-foreground font-sans elegant-body">{achievement}</span>
+                              <span className="text-sm text-foreground font-serif font-light elegant-body">{achievement}</span>
                             </li>
                           ))}
                         </ul>

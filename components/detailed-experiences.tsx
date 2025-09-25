@@ -27,7 +27,7 @@ export default function DetailedExperiences({ isVisible = false, onClose }: Deta
     },
     {
       id: "endress-hauser",
-      company: "Endress+Hauser USA",
+      company: "Endress+Hauser Group",
       role: "Software Engineering Co-op",
       period: "Jan 2025 - Current",
       category: "Professional",

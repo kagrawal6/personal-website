@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { JetBrains_Mono } from "next/font/google"
 import { Playfair_Display } from "next/font/google"
 import { Suspense } from "react"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css"
 
 const inter = Inter({
@@ -39,6 +40,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${playfairDisplay.variable} font-sans antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   )

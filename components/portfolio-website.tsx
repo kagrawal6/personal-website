@@ -53,7 +53,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
       },
       {
         id: "endress-hauser",
-        company: "Endress+Hauser USA",
+        company: "Endress+Hauser Group",
         role: "Software Engineering Co-op",
         period: "Jan 2025 - Current",
         logo: "E+H",
@@ -273,7 +273,7 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
                   I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity is what first pulled me into technology, the idea that imagination and engineering could shape the world around us.
                 </p>
                 <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
-                  I am now a 4th-year Computer Engineering and Computer Science student at UW–Madison, currently on a co-op with Endress+Hauser USA where I work on Netilion, their IIoT platform, including gateways and Bluetooth connectivity features. Through my courses and projects I have been exploring hardware-dependent code, parallel performance tuning, and how modern AI tools are built from a systems perspective.
+                  I am now a <span className="font-bold">4th-year Computer Engineering and Computer Science student at UW–Madison</span>, currently on a co-op with <span className="font-bold">Endress+Hauser Group</span> where I work on Netilion, their IIoT platform, including gateways and Bluetooth connectivity features. Through my courses and projects I have been exploring hardware-dependent code, parallel performance tuning, and how modern AI tools are built from a systems perspective.
                 </p>
                 <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
                   For me, it is about chasing the questions that keep me curious and turning those answers into tools that make life and work easier for others, and in doing so, shaping technology that moves us closer to the future.

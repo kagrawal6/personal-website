@@ -41,38 +41,46 @@ export default function BusinessCard({ onExpand, isExpanded }: BusinessCardProps
           className={`bg-background border border-foreground w-80 sm:w-96 h-52 sm:h-60 p-8 sm:p-12 flex flex-col justify-center items-center text-center transition-all duration-300 ease-out shadow-xl hover:shadow-2xl ${
             isExpanded ? "animate-simple-fade-out" : ""
           }`}
+          style={{ backgroundColor: '#f7f5f3' }}
         >
-          <h1 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6 tracking-wide elegant-heading">KUSHAL AGRAWAL</h1>
-          <div className="w-12 h-px bg-foreground mb-4"></div>
+          <h1 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6 tracking-wide elegant-heading" style={{ color: '#8b1538' }}>KUSHAL AGRAWAL</h1>
+          <div className="w-12 h-px mb-4" style={{ backgroundColor: '#8b1538' }}></div>
 
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base">
             <a
               href="mailto:kagrawal24@wisc.edu"
-              className="text-foreground block hover:text-accent transition-colors duration-200 font-serif"
+              className="text-foreground block transition-colors duration-200 font-serif"
+              style={{ '--hover-color': '#8b1538' } as any}
+              onMouseEnter={(e) => e.currentTarget.style.color = '#8b1538'}
+              onMouseLeave={(e) => e.currentTarget.style.color = ''}
               onClick={(e) => e.stopPropagation()}
             >
               kagrawal24@wisc.edu
             </a>
 
             <div className="flex justify-center space-x-6 mt-3 sm:mt-4">
-              <a
-                href="https://github.com/kagrawal6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-accent transition-colors duration-200"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <GithubIcon />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kushal200903/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-accent transition-colors duration-200"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <LinkedinIcon />
-              </a>
+                  <a
+                    href="https://github.com/kagrawal6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground transition-colors duration-200"
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8b1538'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <GithubIcon />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/kushal200903/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground transition-colors duration-200"
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8b1538'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = ''}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <LinkedinIcon />
+                  </a>
             </div>
           </div>
         </div>

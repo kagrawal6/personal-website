@@ -108,7 +108,7 @@ export default function DetailedExperiences({ isVisible = false, onClose }: Deta
         <header className="sticky top-0 bg-background border-b border-border z-10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
             <div className="flex justify-between items-center">
-              <h1 className="text-2xl sm:text-3xl font-serif text-foreground elegant-heading">
+              <h1 className="text-2xl sm:text-3xl font-serif elegant-heading" style={{ color: '#8b1538' }}>
                 Detailed Experience
               </h1>
               <button

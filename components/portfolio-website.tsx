@@ -87,6 +87,9 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
   const filteredProjects =
     selectedProjectTopic === "All" ? projects : projects.filter((project) => project.topic === selectedProjectTopic)
 
+  const sectionHeadingClass =
+    "font-serif section-separator elegant-heading text-[clamp(1.6rem,4vw,2.5rem)] text-center mb-6"
+
   return (
     <div
       className={`min-h-screen bg-background transition-opacity duration-500 ease-out ${
@@ -211,7 +214,10 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <section id="about" className="mb-20 sm:mb-24 fade-in-up delay-100">
+        <section id="about" className="mb-20 sm:mb-24 fade-in-up delay-100 px-2">
+          <h2 className={`${sectionHeadingClass} text-center`} style={{ color: '#8b1538' }}>
+            About
+          </h2>
           <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-12 space-y-6 lg:space-y-0">
             <div className="lg:w-1/3 flex justify-center lg:justify-start">
               <div className="relative">
@@ -225,13 +231,13 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
             </div>
             <div className="lg:w-2/3">
               <div className="space-y-4 sm:space-y-5">
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
+                <p className="text-[clamp(0.95rem,2.7vw,1.05rem)] text-foreground leading-relaxed font-serif font-light elegant-body text-center lg:text-left">
                   I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity is what first pulled me into technology, the idea that imagination and engineering could shape the world around us.
                 </p>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
+                <p className="text-[clamp(0.95rem,2.7vw,1.05rem)] text-foreground leading-relaxed font-serif font-light elegant-body text-center lg:text-left">
                   I am now a <span className="font-bold">4th-year Computer Engineering and Computer Science student at UW–Madison</span>, currently on a co-op with <span className="font-bold">Endress+Hauser Group</span> where I work on Netilion, their IIoT platform, including gateways and Bluetooth connectivity features. Through my courses and projects I have been exploring hardware-dependent code, parallel performance tuning, and how modern AI tools are built from a systems perspective.
                 </p>
-                <p className="text-xs sm:text-sm text-foreground leading-relaxed font-serif font-light elegant-body">
+                <p className="text-[clamp(0.95rem,2.7vw,1.05rem)] text-foreground leading-relaxed font-serif font-light elegant-body text-center lg:text-left">
                   For me, it is about chasing the questions that keep me curious and turning those answers into tools that make life and work easier for others, and in doing so, shaping technology that moves us closer to the future.
                 </p>
               </div>
@@ -239,12 +245,9 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
           </div>
         </section>
 
-        <section id="experience" className="mb-16 sm:mb-20 fade-in-up delay-200">
+        <section id="experience" className="mb-16 sm:mb-20 fade-in-up delay-200 px-2">
           <div className="text-center mb-8 sm:mb-12 px-4">
-            <h2
-              className="font-serif section-separator elegant-heading text-[clamp(1.75rem,4vw,2.5rem)] mb-4"
-              style={{ color: '#8b1538' }}
-            >
+            <h2 className={sectionHeadingClass} style={{ color: '#8b1538' }}>
               Experience
             </h2>
             <p className="text-[clamp(0.95rem,2.8vw,1.125rem)] text-foreground font-serif font-light max-w-2xl mx-auto">
@@ -292,30 +295,34 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
           </div>
         </section>
 
-        <section id="projects" className="mb-20 fade-in-up delay-300">
-          <h2 className="text-lg sm:text-xl font-serif mb-12 text-center section-separator elegant-heading" style={{ color: '#8b1538' }}>
+        <section id="projects" className="mb-20 fade-in-up delay-300 px-2">
+          <h2 className={sectionHeadingClass} style={{ color: '#8b1538' }}>
             Projects
           </h2>
-          <div className="text-center bg-card p-6 border border-border rounded-lg">
-            <p className="text-base text-muted-foreground font-serif font-light">Coming soon - showcasing innovative projects</p>
+          <div className="text-center bg-card p-6 border border-border rounded-lg max-w-3xl mx-auto">
+            <p className="text-[clamp(1rem,2.8vw,1.15rem)] text-muted-foreground font-serif font-light">
+              Coming soon - showcasing innovative projects
+            </p>
           </div>
         </section>
 
-        <section id="education" className="mb-20 fade-in-up delay-400">
-          <h2 className="text-lg sm:text-xl font-serif mb-12 text-center section-separator elegant-heading" style={{ color: '#8b1538' }}>
+        <section id="education" className="mb-20 fade-in-up delay-400 px-2">
+          <h2 className={sectionHeadingClass} style={{ color: '#8b1538' }}>
             Education
           </h2>
-          <div className="bg-card p-5 border border-border rounded-lg">
-            <div className="flex items-start space-x-5">
-              <div className="w-12 h-12 bg-foreground text-background flex items-center justify-center flex-shrink-0 border-2 border-foreground">
-                <span className="text-sm font-sans font-bold">UW</span>
+          <div className="bg-card p-5 border border-border rounded-lg max-w-3xl mx-auto">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:space-x-5 space-y-4 sm:space-y-0">
+              <div className="w-14 h-14 bg-foreground text-background flex items-center justify-center flex-shrink-0 border-2 border-foreground mx-auto sm:mx-0">
+                <span className="text-base font-sans font-bold">UW</span>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-serif font-bold text-card-foreground mb-2 elegant-heading">
+                <h3 className="text-[clamp(1.2rem,3.2vw,1.6rem)] font-serif font-bold text-card-foreground mb-2 elegant-heading text-center sm:text-left">
                   University of Wisconsin-Madison
                 </h3>
-                <h4 className="text-sm text-muted-foreground mb-3 font-serif font-light">BS Computer Engineering</h4>
-                <div className="flex flex-wrap gap-2 text-xs font-mono">
+                <h4 className="text-[clamp(1rem,2.8vw,1.15rem)] text-muted-foreground mb-3 font-serif font-light text-center sm:text-left">
+                  BS Computer Engineering
+                </h4>
+                <div className="flex flex-wrap justify-center sm:justify-start gap-2 text-xs font-mono">
                   <span className="bg-foreground text-background px-2 py-1 border border-foreground">2022-2026</span>
                   <span className="bg-foreground text-background px-2 py-1 border border-foreground">GPA: 3.8/4.0</span>
                   <span className="bg-foreground text-background px-2 py-1 border border-foreground">Dean's List</span>

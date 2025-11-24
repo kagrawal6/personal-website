@@ -14,76 +14,40 @@ export default function DetailedExperiences({ isVisible = false, onClose }: Deta
 
   const allExperiences = [
     {
-      id: "samsara",
-      company: "Samsara",
-      role: "Incoming Software Engineer Intern",
-      period: "May 2025 - August 2025",
+      id: "professional-placeholder",
+      company: "Coming Soon",
+      role: "Professional Experience",
+      period: "TBD",
       category: "Professional",
-      description: "Incoming software engineering intern focusing on IoT and fleet management solutions.",
-      detailedDescription: "Upcoming internship focused on developing scalable IoT solutions for fleet management. Will be working on real-time data processing, vehicle telematics, and dashboard analytics to help businesses optimize their fleet operations.",
-      technologies: ["Python", "JavaScript", "React", "IoT", "Real-time Systems"],
-      achievements: ["Selected from competitive applicant pool", "Focus on scalable fleet management solutions"],
-      startDate: "2025-05-01"
-    },
-    {
-      id: "endress-hauser",
-      company: "Endress+Hauser Group",
-      role: "Software Engineering Co-op",
-      period: "Jan 2025 - Current",
-      category: "Professional",
-      description: "Working on Netilion IIoT platform, developing gateways and Bluetooth connectivity features.",
-      detailedDescription: "Currently developing features for Netilion, Endress+Hauser's Industrial Internet of Things platform. Focus on gateway development and Bluetooth connectivity solutions to enable seamless device communication and data collection in industrial environments.",
-      technologies: ["IIoT", "Bluetooth", "Gateway Development", "Industrial Systems", "Connectivity Protocols"],
-      achievements: ["Contributing to enterprise IIoT platform", "Developing Bluetooth connectivity features", "Working with industrial gateway systems"],
+      description: "Updated professional experience details will be added shortly.",
+      detailedDescription: "This section is being refreshed. Check back soon for accurate information about recent professional roles, responsibilities, and accomplishments.",
+      technologies: [],
+      achievements: [],
       startDate: "2025-01-01"
     },
     {
-      id: "uw-cdis",
-      company: "UW Madison CDIS",
-      role: "CS 544 (Big Data Systems) Course Assistant",
-      period: "Sep 2024 - Jan 2025",
+      id: "academic-placeholder",
+      company: "Coming Soon",
+      role: "Academic Experience",
+      period: "TBD",
       category: "Academic",
-      description: "Teaching assistant for advanced big data systems course, helping students with distributed computing concepts.",
-      detailedDescription: "Teaching assistant for CS 544, an advanced graduate-level course on big data systems. Helped students understand distributed computing concepts, MapReduce, Spark, and modern data processing frameworks.",
-      technologies: ["Apache Spark", "Hadoop", "MapReduce", "Distributed Systems", "Python"],
-      achievements: ["Assisted 100+ graduate students", "Led weekly office hours", "Created supplementary learning materials"],
-      startDate: "2024-09-01"
+      description: "Updated academic information will be available soon.",
+      detailedDescription: "Academic roles, teaching positions, and research experiences are being updated. Please check back for verified information.",
+      technologies: [],
+      achievements: [],
+      startDate: "2024-01-01"
     },
     {
-      id: "qualcomm",
-      company: "Qualcomm",
-      role: "Software Engineer Intern",
-      period: "May 2024 - Aug 2024",
-      category: "Professional",
-      description: "Developed embedded software solutions for mobile chipsets and wireless communication systems.",
-      detailedDescription: "Worked on embedded software development for next-generation mobile chipsets. Contributed to wireless communication protocols and optimized low-level system performance for mobile devices.",
-      technologies: ["C/C++", "Embedded Systems", "Wireless Protocols", "ARM", "RTOS"],
-      achievements: ["Optimized system performance by 15%", "Contributed to 5G protocol implementation", "Received positive feedback from senior engineers"],
-      startDate: "2024-05-01"
-    },
-    {
-      id: "uw-business",
-      company: "Wisconsin School of Business",
-      role: "RA Data Analyst",
-      period: "Jul 2023 - Sep 2023",
-      category: "Academic",
-      description: "Research assistant analyzing business data and creating statistical models for academic research.",
-      detailedDescription: "Conducted data analysis for business research projects, creating statistical models to understand market trends and consumer behavior. Worked with large datasets to derive actionable insights for academic publications.",
-      technologies: ["R", "Python", "Statistical Modeling", "Data Visualization", "Excel"],
-      achievements: ["Analyzed datasets with 50K+ records", "Contributed to 2 research papers", "Developed automated analysis pipelines"],
-      startDate: "2023-07-01"
-    },
-    {
-      id: "level",
-      company: "The Level Company",
-      role: "Product Intern",
-      period: "Jun 2023 - Oct 2023",
-      category: "Professional",
-      description: "Built product features and analyzed user data to improve platform engagement.",
-      detailedDescription: "Led product development initiatives to enhance user engagement and platform growth. Analyzed user behavior data and implemented features that improved user retention and satisfaction.",
-      technologies: ["React", "Node.js", "Data Analytics", "SQL", "A/B Testing"],
-      achievements: ["Increased user engagement by 25%", "Led design of 3 major features", "Analyzed data from 10K+ users"],
-      startDate: "2023-06-01"
+      id: "volunteer-placeholder",
+      company: "Coming Soon",
+      role: "Volunteer Experience",
+      period: "TBD",
+      category: "Volunteering",
+      description: "Volunteer experiences will be added here.",
+      detailedDescription: "Volunteer experiences and community involvement will be documented here as they develop.",
+      technologies: [],
+      achievements: [],
+      startDate: "2023-01-01"
     }
   ]
 

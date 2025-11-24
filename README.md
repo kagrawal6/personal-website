@@ -22,6 +22,18 @@ Continue building your app on:
 
 **[https://v0.app/chat/projects/uHly3FjuhK6](https://v0.app/chat/projects/uHly3FjuhK6)**
 
+## Run locally
+
+1. Install dependencies (project uses pnpm):
+   ```bash
+   pnpm install
+   ```
+2. Start the Next.js dev server:
+   ```bash
+   pnpm dev
+   ```
+3. Open `http://localhost:3000` in your browser to view the site.
+
 ## How It Works
 
 1. Create and modify your project using [v0.app](https://v0.app)

@@ -1,13 +1,14 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Off-white and black design tokens - business card aesthetic */
-  --background: #f7f5f3;
+  /* White background with maroon accent */
+  --background: #ffffff;
   --foreground: #000000;
-  --card: #ffffff;
+  --card: #fafafa;
   --card-foreground: #1f2937;
   --popover: #ffffff;
   --popover-foreground: #000000;
@@ -15,14 +16,14 @@
   --primary-foreground: #ffffff;
   --secondary: #6b7280;
   --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
+  --muted: #f5f5f5;
   --muted-foreground: #64748b;
   --accent: #8b1538;
   --accent-foreground: #ffffff;
   --maroon: #8b1538;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
+  --border: #e5e5e5;
   --input: #ffffff;
   --ring: rgba(0, 0, 0, 0.2);
   --chart-1: #000000;
@@ -37,45 +38,45 @@
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #374151;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e2e8f0;
+  --sidebar-border: #e5e5e5;
   --sidebar-ring: rgba(0, 0, 0, 0.2);
   --font-playfair: "Playfair Display", serif;
 }
 
 .dark {
-  --background: #1a1816;
-  --foreground: #ffffff;
-  --card: #2a2825;
-  --card-foreground: #e2e8f0;
-  --popover: #000000;
-  --popover-foreground: #ffffff;
-  --primary: #ffffff;
-  --primary-foreground: #000000;
-  --secondary: #475569;
-  --secondary-foreground: #ffffff;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #64748b;
-  --accent-foreground: #ffffff;
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --card: #1a1a1a;
+  --card-foreground: #f5f5f5;
+  --popover: #0a0a0a;
+  --popover-foreground: #fafafa;
+  --primary: #d4af37;
+  --primary-foreground: #0a0a0a;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #fafafa;
+  --muted: #1a1a1a;
+  --muted-foreground: #a8a8a8;
+  --accent: #d4af37;
+  --accent-foreground: #0a0a0a;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
-  --border: #334155;
-  --input: #0f172a;
-  --ring: rgba(255, 255, 255, 0.2);
-  --chart-1: #ffffff;
-  --chart-2: #475569;
-  --chart-3: #94a3b8;
-  --chart-4: #0f172a;
-  --chart-5: #64748b;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: rgba(212, 175, 55, 0.3);
+  --chart-1: #d4af37;
+  --chart-2: #fafafa;
+  --chart-3: #a8a8a8;
+  --chart-4: #1a1a1a;
+  --chart-5: #2a2a2a;
   --radius: 0.5rem;
-  --sidebar: #000000;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #ffffff;
-  --sidebar-primary-foreground: #000000;
-  --sidebar-accent: #64748b;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #334155;
-  --sidebar-ring: rgba(255, 255, 255, 0.2);
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #d4af37;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #2a2a2a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: rgba(212, 175, 55, 0.3);
   --font-playfair: "Playfair Display", serif;
 }
 
@@ -204,14 +205,165 @@ section[id] {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247, 245, 243, 0.98);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
 .dark .sleek-header {
-  background: rgba(26, 24, 22, 0.98);
+  background: rgba(10, 10, 10, 0.98);
 }
+
+/* Liquid glass morphism hover effect - iOS style */
+.glass-hover {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: 
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 245, 248, 0.85) 15%,
+      rgba(248, 235, 240, 0.75) 30%,
+      rgba(240, 225, 232, 0.65) 50%,
+      rgba(230, 210, 220, 0.55) 70%,
+      rgba(220, 195, 210, 0.5) 85%,
+      rgba(139, 21, 56, 0.15) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 50%,
+      rgba(139, 21, 56, 0.08) 100%
+    );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  backdrop-filter: blur(60px) saturate(200%) contrast(110%) brightness(1.1);
+  -webkit-backdrop-filter: blur(60px) saturate(200%) contrast(110%) brightness(1.1);
+  z-index: 1;
+  box-shadow: 
+    0 8px 32px rgba(139, 21, 56, 0.2),
+    0 2px 8px rgba(139, 21, 56, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 1),
+    inset 0 0 0 1px rgba(255, 200, 220, 0.5);
+  border: 1px solid rgba(255, 200, 220, 0.4);
+}
+
+.glass-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-hover > * {
+  position: relative;
+  z-index: 3;
+}
+
+.glass-hover:hover::before,
+.glass-hover:hover::after {
+  opacity: 1;
+}
+
+.glass-hover:hover {
+  transform: translateY(-0.5px);
+}
+
+/* Always visible glass for nav indicator */
+.glass-hover.nav-active::before,
+.glass-hover.nav-active::after {
+  opacity: 1;
+}
+
+/* Glass button with same liquid glass effect */
+.glass-button-permanent {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button-permanent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: 
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.95) 0%,
+      rgba(255, 245, 248, 0.85) 15%,
+      rgba(248, 235, 240, 0.75) 30%,
+      rgba(240, 225, 232, 0.65) 50%,
+      rgba(230, 210, 220, 0.55) 70%,
+      rgba(220, 195, 210, 0.5) 85%,
+      rgba(139, 21, 56, 0.15) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      transparent 50%,
+      rgba(139, 21, 56, 0.08) 100%
+    );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  backdrop-filter: blur(60px) saturate(200%) contrast(110%) brightness(1.1);
+  -webkit-backdrop-filter: blur(60px) saturate(200%) contrast(110%) brightness(1.1);
+  z-index: 1;
+  box-shadow: 
+    0 8px 32px rgba(139, 21, 56, 0.2),
+    0 2px 8px rgba(139, 21, 56, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 1),
+    inset 0 0 0 1px rgba(255, 200, 220, 0.5);
+  border: 1px solid rgba(255, 200, 220, 0.4);
+}
+
+.glass-button-permanent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-button-permanent > * {
+  position: relative;
+  z-index: 3;
+}
+
+.glass-button-permanent:hover::before,
+.glass-button-permanent:hover::after {
+  opacity: 1;
+}
+
+.glass-button-permanent:hover {
+  transform: translateY(-0.5px);
+}
+
 
 .compact-section {
   margin-bottom: 3rem;

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import DetailedExperiences from "./detailed-experiences"
 
 const GithubIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -36,7 +35,6 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
   const [selectedProjectTopic, setSelectedProjectTopic] = useState<string>("All")
   const [selectedExperienceTab, setSelectedExperienceTab] = useState<string>("Professional")
   const [selectedExperience, setSelectedExperience] = useState<any>(null)
-  const [showDetailedExperiences, setShowDetailedExperiences] = useState(false)
 
   const projectTopics = ["All", "Machine Learning", "IoT/Hardware", "Web Development", "Mobile Apps"]
 
@@ -242,17 +240,16 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
         </section>
 
         <section id="experience" className="mb-16 sm:mb-20 fade-in-up delay-200">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12">
-            <h2 className="text-lg sm:text-xl font-serif text-center sm:text-left section-separator elegant-heading mb-4 sm:mb-0" style={{ color: '#8b1538' }}>
-              Experience
-            </h2>
-            <button
-              onClick={() => setShowDetailedExperiences(true)}
-              className="text-sm font-serif hover:text-accent transition-colors duration-200 underline mx-auto sm:mx-0"
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2
+              className="font-serif section-separator elegant-heading text-[clamp(1.75rem,4vw,2.5rem)] mb-4"
               style={{ color: '#8b1538' }}
             >
-              View Detailed Timeline →
-            </button>
+              Experience
+            </h2>
+            <p className="text-[clamp(0.95rem,2.8vw,1.125rem)] text-foreground font-serif font-light max-w-2xl mx-auto">
+              A concise look at professional, academic, and volunteering journeys.
+            </p>
           </div>
 
           <div className="experience-tabs mb-6 sm:mb-8">
@@ -267,25 +264,23 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
             ))}
           </div>
 
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-6 sm:space-y-8 max-w-3xl mx-auto px-2 sm:px-4">
             {experienceData[selectedExperienceTab as keyof typeof experienceData].map((exp) => (
               <div 
                 key={exp.id} 
-                className="flex flex-col md:flex-row md:items-start md:space-x-8 space-y-4 md:space-y-0 border-b border-border pb-6 sm:pb-8 last:border-b-0 cursor-pointer hover:opacity-80 transition-opacity duration-200"
+                className="border-b border-border pb-6 sm:pb-8 last:border-b-0 cursor-pointer hover:opacity-80 transition-opacity duration-200 text-center px-4"
                 onClick={() => setSelectedExperience(exp)}
               >
-                <div className="md:w-1/4">
-                  <div className="text-xs sm:text-sm text-foreground font-mono mb-2">{exp.period}</div>
-                  <div className="text-xs text-foreground opacity-70 font-sans">{exp.company}</div>
-                </div>
-                <div className="md:w-3/4">
-                  <h4 className="text-base sm:text-lg font-serif text-foreground elegant-heading mb-3 flex items-center">
+                <div>
+                  <div className="text-xs sm:text-sm text-foreground font-mono mb-1">{exp.period}</div>
+                  <div className="text-xs text-foreground opacity-70 font-sans mb-3">{exp.company}</div>
+                  <h4 className="text-[clamp(1.15rem,3vw,1.5rem)] font-serif text-foreground elegant-heading mb-3 flex items-center justify-center gap-2">
                     {exp.role}
-                    <svg className="w-3 h-3 ml-2 text-foreground opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 text-foreground opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </h4>
-                  <p className="text-sm sm:text-base text-foreground font-serif font-light elegant-body leading-relaxed">
+                  <p className="text-[clamp(0.95rem,2.4vw,1.1rem)] text-foreground font-serif font-light elegant-body leading-relaxed">
                     {exp.description}
                   </p>
                   <div className="mt-3 text-xs text-foreground opacity-60 font-sans">
@@ -393,12 +388,6 @@ export default function PortfolioWebsite({ isVisible = false }: PortfolioWebsite
               </div>
             </div>
           )}
-
-          {/* Detailed Experiences Page */}
-          <DetailedExperiences 
-            isVisible={showDetailedExperiences} 
-            onClose={() => setShowDetailedExperiences(false)} 
-          />
 
           <footer
             className={`bg-background py-6 transition-all duration-600 ease-out delay-900 ${

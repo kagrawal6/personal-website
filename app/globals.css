@@ -233,6 +233,7 @@ section[id] {
 .experience-tabs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 2rem;
   border-bottom: 2px solid var(--border);
   gap: 0;
@@ -247,6 +248,7 @@ section[id] {
   transition: all 300ms ease;
   border-bottom: 3px solid transparent;
   font-weight: 500;
+  font-size: clamp(0.95rem, 2.5vw, 1.25rem);
 }
 
 .experience-tab:hover {

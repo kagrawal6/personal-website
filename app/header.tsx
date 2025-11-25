@@ -41,9 +41,9 @@ export function Header() {
   }, [pathname])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between transition-all duration-300 px-4 mx-auto max-w-screen-sm ${isScrolled ? 'bg-white py-4' : 'pt-16 pb-4'}`}>
-      <div>
-        <Link href="/" className="font-medium" style={{ color: '#8b1538' }}>
+    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 px-4 mx-auto max-w-screen-sm ${isScrolled ? 'bg-white py-4' : 'pt-16 pb-4'}`}>
+      <div className="min-w-0">
+        <Link href="/" className="font-medium text-sm sm:text-base" style={{ color: '#8b1538' }}>
           Kushal Agrawal
         </Link>
         <TextEffect
@@ -51,20 +51,20 @@ export function Header() {
           preset="fade"
           per="char"
           delay={0.4}
-          className="text-sm text-muted-foreground"
+          className="text-xs sm:text-sm text-muted-foreground truncate"
         >
           kagrawal1762@gmail.com
         </TextEffect>
       </div>
       <LayoutGroup>
-        <nav className="relative flex items-center">
+        <nav className="relative flex items-center flex-wrap gap-1">
           {navItems.map((item, index) => {
             const isActive = pathname === item.path
             return (
               <Link
                 key={item.path}
                 href={item.path}
-                className="relative px-4 py-2 text-sm transition-colors rounded-full"
+                className="relative px-2 sm:px-4 py-2 text-xs sm:text-sm transition-colors rounded-full"
               >
                 {isActive && showBubble && (
                   <motion.div
@@ -103,7 +103,7 @@ export function Header() {
                     }}
                   />
                 )}
-                <span className={`relative z-10 ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}>
+                <span className={`relative z-10 ${isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"}`}>
                   {item.name}
                 </span>
               </Link>

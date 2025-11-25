@@ -139,10 +139,17 @@ export default function Personal() {
         transition={TRANSITION_SECTION}
       >
         <div className="space-y-6">
-          <div className="space-y-4 text-foreground/80">
-            {ABOUT_PARAGRAPHS.map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          <div className="flex flex-col items-center">
+            <img 
+              src="/images/profile-improved.jpg" 
+              alt="Profile" 
+              className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg object-cover mb-6"
+            />
+            <div className="space-y-4 text-foreground/80 w-full">
+              {ABOUT_PARAGRAPHS.map((paragraph, index) => (
+                <p key={index} className="text-justify">{paragraph}</p>
+              ))}
+            </div>
           </div>
           <div className="space-y-3">
             <p className="text-foreground/80">
@@ -271,15 +278,15 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Selected Projects</h3>
         <div className="space-y-6">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
             {PROJECTS.slice(0, 4).map((project) => (
-              <div key={project.id} className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 flex flex-col">
+              <div key={project.id} className="glass-hover relative overflow-hidden rounded-xl sm:rounded-2xl bg-card/40 flex flex-col">
                 <div className="aspect-video bg-muted/30"></div>
-                <div className="p-4 space-y-2">
-                  <h3 className="text-lg font-medium text-foreground">
+                <div className="p-2 sm:p-4 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-lg font-medium text-foreground line-clamp-2">
                     {project.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
                     {project.description}
                   </p>
                 </div>

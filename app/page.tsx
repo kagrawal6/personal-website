@@ -110,7 +110,7 @@ export default function Personal() {
             </p>
             <div className="flex items-center gap-4">
             <a 
-              href="https://github.com/kushal-ag" 
+              href="https://github.com/kagrawal6" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-foreground hover:text-muted-foreground transition-colors"
@@ -307,7 +307,7 @@ export default function Personal() {
             <p className="text-sm text-muted-foreground/70 mb-4">
               {selectedProject.tech}
             </p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
               {selectedProject.description}
             </p>
             

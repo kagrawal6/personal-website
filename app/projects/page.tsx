@@ -93,7 +93,7 @@ export default function ProjectsPage() {
               <p className="text-sm text-muted-foreground/70 mb-4">
                 {selectedProject.tech}
               </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                 {selectedProject.description}
               </p>
               

@@ -1,6 +1,7 @@
 export type Project = {
   id: string
   name: string
+  tech: string
   description: string
   link: string
   video: string
@@ -49,82 +50,90 @@ export const PROJECTS: Project[] = [
   {
     id: "proj-1",
     name: "FileHawk.net – Local Semantic Search",
-    description: "Placeholder description.",
-    link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0",
+    tech: "Electron, Python, ChromaDB, SentenceTransformers",
+    description: "Architected a cross-platform desktop app (Electron + React + Flask) that searches 50GB+ local data with sub-second responses; two-stage retrieval (ChromaDB vectors + rerank) reduced file searching time by 75%. Delivered high-precision semantic search using dual SentenceTransformers (MS MARCO / All-MiniLM) and a proprietary Gist ranker; intelligent chunking + caching drove 95% relevance across 25+ file types. Built real-time, incremental indexing (Watchdog + SHA-256 change detection) handling 10k+ file changes/hr.",
+    link: "https://filehawk.net",
+    video: "",
   },
   {
     id: "proj-2",
     name: "High-Frequency Currency Arbitrage Engine",
-    description: "Placeholder description.",
+    tech: "C++, OpenMP, CUDA, Python, Real-Time Data, CMake",
+    description: "Built a parallel HFT pipeline for real-time FX arbitrage, leveraging OpenMP and CUDA to accelerate graph-based detection and simulation across 19+ currency pairs. Streamlined ingestion and normalization of live FX data, modeling dynamic markets as time-indexed graphs and detecting arbitrage cycles with GPU-accelerated Bellman–Ford. Simulated trade execution with transaction cost and risk modeling, supporting dynamic position sizing and latency-aware strategies.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-3",
     name: "FPGA Knight's Tour",
-    description: "Placeholder description.",
+    tech: "SystemVerilog, ModelSim, Synopsys Design Compiler, Quartus Prime",
+    description: "Designed an FPGA-based autonomous robot to solve the Knight's Tour problem using SystemVerilog, integrating a PID controller, SPI for gyroscope data, and IR sensors for movement tracking. Achieved 333 MHz timing closure, reduced synthesized area by 25% through Synopsys standard cell optimizations, and lowered power consumption by 12% using gated clock designs. Built self-checking testbenches ensuring full code coverage, post-synthesis validation, and FPGA performance.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-4",
     name: "Partial Scan Optimization – b14 Viper Processor",
-    description: "Placeholder description.",
+    tech: "TCL, Synopsys Design Vision, TetraMax, ATPG, SCOAP, Verilog, STIL",
+    description: "Architected and automated a custom partial scan DFT flow for a synthesized processor design, optimizing test coverage, area, and scan overhead under strict ATE pin constraints. Developed TCL-based tooling to drive flip-flop selection via SCOAP analysis, selectively excluding noncritical scan elements while preserving controllability/observability. Achieved >85% test coverage with >5× reduction in pattern count using coverage-constrained ATPG and scan chain tuning.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-5",
-    name: "5-Stage Pipelined RISC Processor",
-    description: "Placeholder description.",
+    name: "ICCAD 2025 Problem C Incremental Placement Tool",
+    tech: "C++, Python, Bash, TCL, OpenROAD, Verilog, DEF/LEF, Docker",
+    description: "Developing a full-stack optimizer to improve ASIC placement by integrating cell relocation, gate sizing, and buffer/inverter insertion for better PPA (Power, Performance, Area). Parsing and manipulating industry-standard formats (pl, v, .lef, .lib, .scl) to enable legal placement transformations with minimal cell displacement. Building a scalable, GPU-ready toolchain containerized with Docker for reproducible benchmarking and performance testing.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-6",
-    name: "Parallel Circuit Partitioning & Taskflow Simulator",
-    description: "Placeholder description.",
+    name: "DevPulse",
+    tech: "TypeScript, Node.js, pnpm, Jest, Istanbul/LCOV, Commander.js, GitHub Actions",
+    description: "Building a modular CLI tool for automated test suite analysis, including flakiness detection, coverage analysis, and actionable reporting for JavaScript/TypeScript projects. Designed a TypeScript monorepo (pnpm) with plugin-based analyzers and reporters, supporting parallel test execution and statistical flakiness scoring. Integrated Istanbul/LCOV coverage parsing and multi-format report generation (HTML, Markdown, JSON).",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-7",
-    name: "FUSE-Based Linux Filesystem",
-    description: "Placeholder description.",
+    name: "5-Stage Pipelined RISC Processor",
+    tech: "Verilog, ModelSim, Synopsys Design Compiler",
+    description: "Designed a 16-bit, 5-stage pipelined processor in Verilog based on MIPS R2000, developing the data path and control path with an optimized ALU, forwarding, hazard detection, and branch prediction to minimize stalls. Implemented a pipelined microarchitecture with register file bypassing, forwarding, and branch prediction. Integrated a 2-way set-associative L1 instruction and data cache with direct-mapped and write-back policies.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-8",
-    name: "xv6 Memory Mapping with Copy-on-Write",
-    description: "Placeholder description.",
+    name: "FUSE-Based Linux Filesystem",
+    tech: "C, Bash, Python, Emacs Lisp, FUSE, GDB, POSIX",
+    description: "Developed a user-space filesystem in C using FUSE, enabling file creation, deletion, reading, writing, and directory management with inode-based storage and indirect block mapping for large file support. Implemented RAID 0 for data striping and RAID 1 for mirroring, ensuring redundancy and fault tolerance. Designed and mounted the filesystem with superblock-based metadata tracking, block allocation via bitmaps, and efficient disk operations.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-9",
-    name: "Two-Player Matching Squares Game",
-    description: "Placeholder description.",
+    name: "xv6 Memory Mapping with Copy-on-Write",
+    tech: "C, xv6, x86 Paging, GDB, Makefile, Bash, Python",
+    description: "Implemented memory-mapped file support in xv6, enabling file-backed and anonymous memory allocations with lazy page allocation, demand paging, and page fault handling to optimize memory usage. Optimized process memory with Copy-on-Write, reducing duplication via shared pages and reference counting. Enforced ELF segment protections, preventing unauthorized writes and ensuring safe concurrent access with locks.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
   },
   {
     id: "proj-10",
-    name: "Heap Simulator",
-    description: "Placeholder description.",
+    name: "Two-Player Matching Squares Game",
+    tech: "C, FreeRTOS, MSP432, PSoC 6, SPI, I2C, UART",
+    description: "Developed an embedded systems game in C on an MSP432 Launchpad and PSoC 6, utilizing FreeRTOS. Used SPI and I2C to interface with sensors and peripherals on PSoC 6, integrating an accelerometer, joystick, light sensors, and an LCD for real-time player control and feedback. Implemented UART for multiplayer communication between two boards, enabling real-time data transmission.",
     link: "#",
-    video:
-      "https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0",
+    video: "",
+  },
+  {
+    id: "proj-11",
+    name: "Heap Simulator",
+    tech: "C, Git, Makefile",
+    description: "Engineered a dynamic memory management system, implementing best-fit placement, splitting, and immediate coalescing to efficiently handle allocation and deallocation of memory blocks. Simulated a 1 MB heap, leveraging pointer arithmetic, bit masking, and header/footer management to achieve precise memory block tracking. Designed and automated extensive test cases with Makefile scripts to simulate complex allocation scenarios.",
+    link: "#",
+    video: "",
   },
 ]
 

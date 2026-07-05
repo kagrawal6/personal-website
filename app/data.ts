@@ -36,7 +36,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { label: "LinkedIn", link: "https://www.linkedin.com/in/kushal200903/" },
 ]
 
-export const ABOUT_PARAGRAPHS: string[] = []
+export const ABOUT_PARAGRAPHS = [
+  "I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity first pulled me into technology: the idea that imagination and engineering could shape the world around us.",
+  "I am a first-year Computer Engineering master's student at Carnegie Mellon University. My interests center on the intersection of computer architecture and systems software, especially in designing efficient platforms for AI and high-performance computing. I am driven by the idea of building the underlying tools and infrastructure that allow future technologies to scale.",
+]
 
 export const RECENTLY_PLAYED = [
   { id: "track-1", title: "Shoota (feat. Lil Uzi Vert)", artist: "Playboi Carti" },

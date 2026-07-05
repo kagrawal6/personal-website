@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "motion/react"
 import { XIcon } from "lucide-react"
 import { Magnetic } from "@/components/ui/magnetic"
+import { SpotifyRecentlyPlayed } from "@/components/spotify-recently-played"
 import Link from "next/link"
 import { useState } from "react"
 import {
@@ -98,6 +99,15 @@ export default function Personal() {
             </div>
           </div>
           <div className="space-y-3">
+            <p className="text-foreground/80">
+              Feel free to contact me at{" "}
+              <a
+                href={`mailto:${EMAIL}`}
+                className="text-maroon underline hover:text-foreground transition-colors"
+              >
+                {EMAIL}
+              </a>
+            </p>
             <div className="flex items-center gap-4">
             <a 
               href="https://github.com/kagrawal6" 
@@ -271,10 +281,23 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium text-maroon">Interests</h3>
-        <p className="text-muted-foreground">
-          Content coming soon...
-        </p>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Interests Outside of Tech</h3>
+        <div className="space-y-4 text-foreground/80">
+          <p className="text-justify">
+            Outside of tech, I spend a lot of time around sports. I love playing and watching soccer and basketball, and I am a huge FC Barcelona fan. I also enjoy occasionally ragebaiting my friends with horrendously bad sports takes.
+          </p>
+          <p className="text-justify">
+            I have also grown to enjoy running. I recently completed the Tata Mumbai Half Marathon, and while I have been rebuilding consistency since then, it remains one of the most rewarding challenges I have taken on.
+          </p>
+          <p className="text-justify">
+            Teaching and outreach are also very important to me. Through my work as a teaching assistant and my involvement with Engineering EXPO, I have loved helping younger students and college peers build confidence, curiosity, and excitement around engineering.
+          </p>
+          <p className="text-justify">
+            I am not a huge gamer, but I still find myself coming back to Clash Royale from time to time. I also enjoy hanging out with friends and discovering new music, movies, and shows/anime.
+          </p>
+
+          <SpotifyRecentlyPlayed fallbackTrack={RECENTLY_PLAYED[0]} />
+        </div>
       </motion.section>
     </motion.main>
 

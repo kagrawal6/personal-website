@@ -37,7 +37,7 @@ export default function ExperiencePage() {
     >
       <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <div className="mb-12">
-          <h1 className="text-3xl font-medium mb-2" style={{ color: '#8b1538' }}>Work Experience</h1>
+          <h1 className="text-3xl font-medium mb-2 text-maroon">Work Experience</h1>
           <p className="text-muted-foreground">Professional experience and roles</p>
         </div>
 
@@ -50,12 +50,21 @@ export default function ExperiencePage() {
               rel="noopener noreferrer"
               key={job.id}
             >
-              <div className="relative flex w-full flex-row justify-between">
-                <div>
-                  <h4 className="font-normal text-foreground">{job.title}</h4>
-                  <p className="text-muted-foreground">{job.company}</p>
+              <div className="relative flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-center gap-4">
+                  {job.logo && (
+                    <img
+                      src={job.logo}
+                      alt={`${job.company} logo`}
+                      className="h-12 w-12 shrink-0 rounded-lg bg-white object-contain p-1"
+                    />
+                  )}
+                  <div className="min-w-0">
+                    <h4 className="font-normal text-foreground">{job.title}</h4>
+                    <p className="text-muted-foreground">{job.company}</p>
+                  </div>
                 </div>
-                <p className="text-muted-foreground">
+                <p className="shrink-0 text-sm text-muted-foreground sm:text-base">
                   {job.start} - {job.end}
                 </p>
               </div>

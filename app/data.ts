@@ -14,6 +14,7 @@ export type WorkExperience = {
   start: string
   end: string
   link: string
+  logo?: string
 }
 
 export type BlogPost = {
@@ -28,17 +29,14 @@ export type SocialLink = {
   link: string
 }
 
-export const EMAIL = "kagrawal24@wisc.edu"
+export const EMAIL = "kushalag@andrew.cmu.edu"
 
 export const SOCIAL_LINKS: SocialLink[] = [
   { label: "Github", link: "https://github.com/kagrawal6" },
   { label: "LinkedIn", link: "https://www.linkedin.com/in/kushal200903/" },
 ]
 
-export const ABOUT_PARAGRAPHS = [
-  "I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity is what first pulled me into technology, the idea that imagination and engineering could shape the world around us.",
-  "I am now a 4th-year Computer Engineering and Computer Science student at UW–Madison, currently on a co-op with Endress+Hauser Group where I work on Netilion (their IIoT platform), gateways and Bluetooth connectivity features! My interests center on hardware-dependent code, parallel performance tuning, and how modern AI tools are built from a systems perspective.",
-]
+export const ABOUT_PARAGRAPHS: string[] = []
 
 export const RECENTLY_PLAYED = [
   { id: "track-1", title: "Shoota (feat. Lil Uzi Vert)", artist: "Playboi Carti" },
@@ -147,12 +145,13 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    id: "work-1",
-    company: "IEEE HKN",
-    title: "Member",
-    start: "September 2025",
-    end: "Present",
+    id: "work-google-capstone",
+    company: "Google (Capstone)",
+    title: "Software Egineering Intern",
+    start: "Jan 2026",
+    end: "May 2026",
     link: "#",
+    logo: "/images/google-logo.png",
   },
   {
     id: "work-2",
@@ -161,6 +160,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: "May 2025",
     end: "Present",
     link: "#",
+    logo: "/images/endress-hauser-logo.png",
   },
   {
     id: "work-3",
@@ -169,14 +169,16 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: "May 2024",
     end: "August 2024",
     link: "#",
+    logo: "/images/endress-hauser-logo.png",
   },
   {
     id: "work-4",
     company: "Department of ECE",
     title: "Undergraduate Teaching Assistant",
     start: "September 2023",
-    end: "May 2025",
+    end: "May 2026",
     link: "#",
+    logo: "/images/uw-ece-logo.png",
   },
   {
     id: "work-5",
@@ -185,46 +187,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     start: "May 2023",
     end: "August 2023",
     link: "#",
-  },
-  {
-    id: "work-6",
-    company: "Wisconsin Union",
-    title: "Student Staff",
-    start: "December 2022",
-    end: "May 2023",
-    link: "#",
-  },
-  {
-    id: "work-7",
-    company: "Engineering Expo",
-    title: "Member",
-    start: "September 2022",
-    end: "Present",
-    link: "#",
-  },
-  {
-    id: "work-8",
-    company: "Homeopathic Academy of Research & Charities (HARC)",
-    title: "Volunteer",
-    start: "March 2021",
-    end: "May 2021",
-    link: "#",
-  },
-  {
-    id: "work-9",
-    company: "Chavare Engineering",
-    title: "Research Intern",
-    start: "March 2021",
-    end: "March 2021",
-    link: "#",
-  },
-  {
-    id: "work-10",
-    company: "TEE Foundation",
-    title: "Volunteer",
-    start: "January 2021",
-    end: "January 2021",
-    link: "#",
+    logo: "/images/larsen-toubro-logo.png",
   },
 ]
 
@@ -248,4 +211,3 @@ export const BLOG_POSTS: BlogPost[] = [
     link: "/blog",
   },
 ]
-

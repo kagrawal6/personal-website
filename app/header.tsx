@@ -8,8 +8,6 @@ import { useEffect, useState } from "react"
 
 const navItems = [
   { name: "home", path: "/" },
-  { name: "education", path: "/education" },
-  { name: "experience", path: "/experience" },
   { name: "projects", path: "/projects" },
 ]
 
@@ -41,9 +39,13 @@ export function Header() {
   }, [pathname])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 px-4 mx-auto max-w-screen-sm ${isScrolled ? 'bg-white py-4' : 'pt-16 pb-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 px-4 mx-auto max-w-screen-sm ${
+      isScrolled
+        ? 'bg-background/90 py-4 backdrop-blur-md'
+        : 'pt-16 pb-4'
+    }`}>
       <div className="min-w-0">
-        <Link href="/" className="font-medium text-sm sm:text-base" style={{ color: '#8b1538' }}>
+        <Link href="/" className="font-medium text-sm sm:text-base text-maroon">
           Kushal Agrawal
         </Link>
         <TextEffect
@@ -53,7 +55,7 @@ export function Header() {
           delay={0.4}
           className="text-xs sm:text-sm text-muted-foreground truncate"
         >
-          kagrawal1762@gmail.com
+          kushalag@andrew.cmu.edu
         </TextEffect>
       </div>
       <LayoutGroup>
@@ -68,38 +70,11 @@ export function Header() {
               >
                 {isActive && showBubble && (
                   <motion.div
-                    className="absolute inset-0 rounded-full overflow-hidden"
+                    className="nav-active-pill absolute inset-0 rounded-full overflow-hidden"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{
                       duration: 0.2,
-                    }}
-                    style={{
-                      background: `
-                        radial-gradient(
-                          circle at 25% 25%,
-                          rgba(255, 255, 255, 0.95) 0%,
-                          rgba(255, 245, 248, 0.85) 15%,
-                          rgba(248, 235, 240, 0.75) 30%,
-                          rgba(240, 225, 232, 0.65) 50%,
-                          rgba(230, 210, 220, 0.55) 70%,
-                          rgba(220, 195, 210, 0.5) 85%,
-                          rgba(139, 21, 56, 0.15) 100%
-                        ),
-                        linear-gradient(
-                          135deg,
-                          rgba(255, 255, 255, 0.4) 0%,
-                          transparent 50%,
-                          rgba(139, 21, 56, 0.08) 100%
-                        )
-                      `,
-                      backdropFilter: 'blur(60px) saturate(200%) contrast(110%) brightness(1.1)',
-                      WebkitBackdropFilter: 'blur(60px) saturate(200%) contrast(110%) brightness(1.1)',
-                      boxShadow: `
-                        inset 0 2px 4px rgba(255, 255, 255, 1),
-                        inset 0 0 0 1px rgba(255, 200, 220, 0.5)
-                      `,
-                      border: '1px solid rgba(255, 200, 220, 0.4)',
                     }}
                   />
                 )}
@@ -114,4 +89,3 @@ export function Header() {
     </header>
   )
 }
-

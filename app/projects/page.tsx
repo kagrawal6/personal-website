@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       >
         <motion.section variants={VARIANTS_ITEM}>
           <div className="mb-8">
-            <h1 className="text-3xl font-medium mb-2" style={{ color: '#8b1538' }}>Selected Projects</h1>
+            <h1 className="text-3xl font-medium mb-2 text-maroon">Selected Projects</h1>
             <p className="text-muted-foreground">Featured work and side projects</p>
           </div>
 
@@ -102,8 +102,7 @@ export default function ProjectsPage() {
                   href={selectedProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-4 text-sm font-medium transition-colors hover:opacity-70"
-                  style={{ color: '#8b1538' }}
+                  className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-maroon transition-colors hover:opacity-70"
                 >
                   View Project →
                 </a>
@@ -115,4 +114,3 @@ export default function ProjectsPage() {
     </>
   )
 }
-

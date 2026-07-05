@@ -98,16 +98,6 @@ export default function Personal() {
             </div>
           </div>
           <div className="space-y-3">
-            <p className="text-foreground/80">
-              Feel free to contact me at{" "}
-              <a 
-                href="mailto:kagrawal1762@gmail.com" 
-                className="underline hover:text-foreground transition-colors"
-                style={{ color: '#8b1538' }}
-              >
-                kagrawal1762@gmail.com
-              </a>
-            </p>
             <div className="flex items-center gap-4">
             <a 
               href="https://github.com/kagrawal6" 
@@ -150,32 +140,46 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Education</h3>
-        <Link
-          href="/education"
-          className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4 block group"
-        >
-          <div className="relative flex items-start justify-between">
-            <div>
-              <h4 className="text-lg font-normal text-foreground mb-1">
-                University of Wisconsin-Madison
-              </h4>
-              <p className="text-base text-muted-foreground mb-2">
-                Bachelor of Science in Computer Engineering, Computer Science
-              </p>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <span>GPA: 3.77/4.00</span>
-                <span>•</span>
-                <span>May 2026</span>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Education</h3>
+        <div className="flex flex-col space-y-2">
+          <div className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4">
+            <div className="relative flex items-center gap-4">
+              <img
+                src="/images/cmu-logo.png"
+                alt="Carnegie Mellon University logo"
+                className="h-14 w-14 shrink-0 rounded-lg object-contain"
+              />
+              <div className="min-w-0 flex-1">
+                <h4 className="text-lg font-normal text-foreground mb-1">
+                  Carnegie Mellon University
+                </h4>
+                <div className="flex flex-col gap-1 text-base text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+                  <p>Master of Science in Computer Engineering</p>
+                  <p className="shrink-0 text-sm">Aug 2026 - Dec 2027</p>
+                </div>
               </div>
             </div>
-            <div className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+          </div>
+
+          <div className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4">
+            <div className="relative flex items-center gap-4">
+              <img
+                src="/images/uw-madison-logo.png"
+                alt="University of Wisconsin-Madison logo"
+                className="h-14 w-14 shrink-0 rounded-lg object-contain"
+              />
+              <div className="min-w-0 flex-1">
+                <h4 className="text-lg font-normal text-foreground mb-1">
+                  University of Wisconsin-Madison
+                </h4>
+                <div className="flex flex-col gap-1 text-base text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+                  <p>Bachelor of Science in Computer Engineering</p>
+                  <p className="shrink-0 text-sm">Sep 2022 - May 2026</p>
+                </div>
+              </div>
             </div>
           </div>
-        </Link>
+        </div>
       </motion.section>
 
       <motion.section
@@ -183,9 +187,9 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Work Experience</h3>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Work Experience</h3>
         <div className="flex flex-col space-y-2">
-          {WORK_EXPERIENCE.slice(0, 3).map((job) => (
+          {WORK_EXPERIENCE.map((job) => (
             <a
               className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4 block"
               href={job.link}
@@ -193,27 +197,26 @@ export default function Personal() {
               rel="noopener noreferrer"
               key={job.id}
             >
-              <div className="relative flex w-full flex-row justify-between">
-                <div>
-                  <h4 className="font-normal text-foreground">{job.title}</h4>
-                  <p className="text-muted-foreground">{job.company}</p>
+              <div className="relative flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex min-w-0 items-center gap-4">
+                  {job.logo && (
+                    <img
+                      src={job.logo}
+                      alt={`${job.company} logo`}
+                      className="h-12 w-12 shrink-0 rounded-lg bg-white object-contain p-1"
+                    />
+                  )}
+                  <div className="min-w-0">
+                    <h4 className="font-normal text-foreground">{job.title}</h4>
+                    <p className="text-muted-foreground">{job.company}</p>
+                  </div>
                 </div>
-                <p className="text-muted-foreground">
+                <p className="shrink-0 text-sm text-muted-foreground sm:text-base">
                   {job.start} - {job.end}
                 </p>
               </div>
             </a>
           ))}
-          
-          <div className="flex justify-center pt-2">
-            <Link
-              href="/experience"
-              className="glass-button-permanent rounded-full px-4 py-1.5 inline-flex items-center transition-all text-sm hover:shadow-md"
-              style={{ color: '#8b1538' }}
-            >
-              <span className="font-medium">see more</span>
-            </Link>
-          </div>
         </div>
       </motion.section>
 
@@ -222,7 +225,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Selected Projects</h3>
         <div className="space-y-4">
           <div className="flex flex-col space-y-2">
             {PROJECTS.slice(0, 4).map((project) => (
@@ -246,8 +249,7 @@ export default function Personal() {
           <div className="flex justify-center pt-2">
             <Link
               href="/projects"
-              className="glass-button-permanent rounded-full px-4 py-1.5 inline-flex items-center transition-all text-sm hover:shadow-md"
-              style={{ color: '#8b1538' }}
+              className="glass-button-permanent rounded-full px-4 py-1.5 inline-flex items-center text-sm text-maroon transition-all hover:shadow-md"
             >
               <span className="font-medium">see more</span>
             </Link>
@@ -259,7 +261,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Blog</h3>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Blog</h3>
         <p className="text-muted-foreground">
           Content coming soon...
         </p>
@@ -269,7 +271,7 @@ export default function Personal() {
         variants={VARIANTS_SECTION}
         transition={TRANSITION_SECTION}
       >
-        <h3 className="mb-5 text-lg font-medium" style={{ color: '#8b1538' }}>Interests</h3>
+        <h3 className="mb-5 text-lg font-medium text-maroon">Interests</h3>
         <p className="text-muted-foreground">
           Content coming soon...
         </p>
@@ -316,8 +318,7 @@ export default function Personal() {
                 href={selectedProject.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 mt-4 text-sm font-medium transition-colors hover:opacity-70"
-                style={{ color: '#8b1538' }}
+                className="inline-flex items-center gap-1 mt-4 text-sm font-medium text-maroon transition-colors hover:opacity-70"
               >
                 View Project →
               </a>
@@ -329,4 +330,3 @@ export default function Personal() {
     </>
   )
 }
-

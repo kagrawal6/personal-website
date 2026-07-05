@@ -32,7 +32,7 @@ export default function EducationPage() {
     >
       <motion.section variants={VARIANTS_SECTION} transition={TRANSITION_SECTION}>
         <div className="mb-12">
-          <h1 className="text-3xl font-medium mb-2" style={{ color: '#8b1538' }}>Education</h1>
+          <h1 className="text-3xl font-medium mb-2 text-maroon">Education</h1>
           <p className="text-muted-foreground">Academic background and achievements</p>
         </div>
 

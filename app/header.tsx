@@ -2,8 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { motion, AnimatePresence, LayoutGroup } from "motion/react"
-import { TextEffect } from "@/components/ui/text-effect"
+import { motion, LayoutGroup } from "motion/react"
 import { useEffect, useState } from "react"
 
 const navItems = [
@@ -45,18 +44,16 @@ export function Header() {
         : 'pt-16 pb-4'
     }`}>
       <div className="min-w-0">
-        <Link href="/" className="font-medium text-sm sm:text-base text-maroon">
-          Kushal Agrawal
+        <Link href="/" className="flex items-center gap-3">
+          <img
+            src="/images/header-face.png"
+            alt="Kushal Agrawal"
+            className="h-8 w-8 shrink-0 rounded-full object-cover object-[50%_28%]"
+          />
+          <span className="truncate text-sm font-medium text-foreground sm:text-base">
+            Kushal Agrawal कुशल अग्रवाल
+          </span>
         </Link>
-        <TextEffect
-          as="p"
-          preset="fade"
-          per="char"
-          delay={0.4}
-          className="text-xs sm:text-sm text-muted-foreground truncate"
-        >
-          kushalag@andrew.cmu.edu
-        </TextEffect>
       </div>
       <LayoutGroup>
         <nav className="relative flex items-center flex-wrap gap-1">

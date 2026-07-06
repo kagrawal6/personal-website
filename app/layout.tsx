@@ -20,8 +20,13 @@ const jetBrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Kushal Agrawal - Portfolio",
+  title: "Kushal Agrawal कुशल अग्रवाल",
   description: "Computer Engineering Student at University of Wisconsin-Madison",
+  icons: {
+    icon: "/images/header-face.png",
+    shortcut: "/images/header-face.png",
+    apple: "/images/header-face.png",
+  },
 }
 
 export default function RootLayout({

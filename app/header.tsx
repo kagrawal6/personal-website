@@ -3,7 +3,9 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { motion, LayoutGroup } from "motion/react"
+import { TextEffect } from "@/components/ui/text-effect"
 import { useEffect, useState } from "react"
+import { EMAIL } from "./data"
 
 const navItems = [
   { name: "home", path: "/" },
@@ -12,7 +14,6 @@ const navItems = [
 
 export function Header() {
   const pathname = usePathname()
-  const activeIndex = navItems.findIndex(item => item.path === pathname)
   const [isScrolled, setIsScrolled] = useState(false)
   const [showBubble, setShowBubble] = useState(true)
 
@@ -20,44 +21,44 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   useEffect(() => {
-    // Hide bubble, scroll to top, then show bubble again
     setShowBubble(false)
-    window.scrollTo({ top: 0, behavior: 'instant' })
-    
-    // Wait for scroll and DOM to settle
+    window.scrollTo({ top: 0, behavior: "instant" })
+
     const timer = setTimeout(() => {
       setShowBubble(true)
     }, 10)
-    
+
     return () => clearTimeout(timer)
   }, [pathname])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 px-4 mx-auto max-w-screen-sm ${
-      isScrolled
-        ? 'bg-background/90 py-4 backdrop-blur-md'
-        : 'pt-16 pb-4'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 transition-all duration-300 px-4 mx-auto max-w-screen-sm ${
+        isScrolled ? "bg-background/90 py-4 backdrop-blur-md" : "pt-16 pb-4"
+      }`}
+    >
       <div className="min-w-0">
-        <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/images/header-face.png"
-            alt="Kushal Agrawal"
-            className="h-8 w-8 shrink-0 rounded-full object-cover object-[50%_28%]"
-          />
-          <span className="truncate text-sm font-medium text-foreground sm:text-base">
-            Kushal Agrawal कुशल अग्रवाल
-          </span>
+        <Link href="/" className="font-medium text-sm sm:text-base text-maroon">
+          Kushal Agrawal
         </Link>
+        <TextEffect
+          as="p"
+          preset="fade"
+          per="char"
+          delay={0.4}
+          className="text-xs sm:text-sm text-muted-foreground truncate"
+        >
+          {EMAIL}
+        </TextEffect>
       </div>
       <LayoutGroup>
         <nav className="relative flex items-center flex-wrap gap-1">
-          {navItems.map((item, index) => {
+          {navItems.map((item) => {
             const isActive = pathname === item.path
             return (
               <Link
@@ -75,7 +76,13 @@ export function Header() {
                     }}
                   />
                 )}
-                <span className={`relative z-10 ${isActive ? "text-foreground font-semibold" : "text-muted-foreground hover:text-foreground"}`}>
+                <span
+                  className={`relative z-10 ${
+                    isActive
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
                   {item.name}
                 </span>
               </Link>

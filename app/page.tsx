@@ -94,16 +94,33 @@ export default function Personal() {
             />
             <div className="space-y-4 text-foreground/80 w-full">
               {ABOUT_PARAGRAPHS.map((paragraph, index) => (
-                <p key={index} className="text-justify">{paragraph}</p>
+                <p key={index} className="text-justify">
+                  {index === 1 ? (
+                    <>
+                      I am a first-year Computer Engineering master&apos;s student at{" "}
+                      <a
+                        href="https://www.ece.cmu.edu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-maroon underline underline-offset-4 transition-colors hover:text-foreground"
+                      >
+                        Carnegie Mellon University
+                      </a>
+                      . My interests center on the intersection of computer architecture and systems software, especially in designing efficient platforms for AI and high-performance computing. I am driven by the idea of building the underlying tools and infrastructure that allow future technologies to scale.
+                    </>
+                  ) : (
+                    paragraph
+                  )}
+                </p>
               ))}
             </div>
           </div>
           <div className="space-y-3">
-            <p className="text-foreground/80">
-              Feel free to contact me at{" "}
+            <p className="rounded-2xl border border-maroon/20 bg-maroon/5 px-4 py-3 text-sm leading-relaxed text-foreground/85 shadow-sm">
+              I&apos;m currently looking for Summer 2027 internship opportunities. If you think there&apos;s a good fit, please feel free to email me at{" "}
               <a
                 href={`mailto:${EMAIL}`}
-                className="text-maroon underline hover:text-foreground transition-colors"
+                className="font-medium text-maroon underline underline-offset-4 transition-colors hover:text-foreground"
               >
                 {EMAIL}
               </a>

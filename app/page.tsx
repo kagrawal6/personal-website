@@ -97,16 +97,7 @@ export default function Personal() {
                 <p key={index} className="text-justify">
                   {index === 1 ? (
                     <>
-                      I am a first-year Computer Engineering master&apos;s student at{" "}
-                      <a
-                        href="https://www.ece.cmu.edu/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-maroon underline underline-offset-4 transition-colors hover:text-foreground"
-                      >
-                        Carnegie Mellon University
-                      </a>
-                      . My interests center on the intersection of computer architecture and systems software, especially in designing efficient platforms for AI and high-performance computing. I am driven by the idea of building the underlying tools and infrastructure that allow future technologies to scale.
+                      I am a first-year Computer Engineering master&apos;s student at Carnegie Mellon University. My interests center on the intersection of computer architecture and systems software, especially in designing efficient platforms for AI and high-performance computing. I am driven by the idea of building the underlying tools and infrastructure that allow future technologies to scale.
                     </>
                   ) : (
                     paragraph
@@ -169,7 +160,12 @@ export default function Personal() {
       >
         <h3 className="mb-5 text-lg font-medium text-maroon">Education</h3>
         <div className="flex flex-col space-y-2">
-          <div className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4">
+          <a
+            href="https://www.ece.cmu.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-hover relative block overflow-hidden rounded-2xl bg-card/40 p-4 text-inherit no-underline"
+          >
             <div className="relative flex items-center gap-4">
               <img
                 src="/images/cmu-logo.png"
@@ -186,9 +182,14 @@ export default function Personal() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div className="glass-hover relative overflow-hidden rounded-2xl bg-card/40 p-4">
+          <a
+            href="https://engineering.wisc.edu/departments/electrical-computer-engineering/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glass-hover relative block overflow-hidden rounded-2xl bg-card/40 p-4 text-inherit no-underline"
+          >
             <div className="relative flex items-center gap-4">
               <img
                 src="/images/uw-madison-logo.png"
@@ -205,7 +206,7 @@ export default function Personal() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </motion.section>
 

@@ -20,7 +20,7 @@ const jetBrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Kushal Agrawal कुशल अग्रवाल",
+  title: "Kushal Agrawal",
   description: "Computer Engineering Student at University of Wisconsin-Madison",
   icons: {
     icon: "/images/header-face.png",

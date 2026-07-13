@@ -1,7 +1,9 @@
 export type Project = {
   id: string
   name: string
+  eyebrow: string
   tech: string
+  summary: string
   description: string
   link: string
   video: string
@@ -49,98 +51,134 @@ export const RECENTLY_PLAYED = [
 
 export const PROJECTS: Project[] = [
   {
-    id: "proj-1",
-    name: "FileHawk.net – Local Semantic Search",
+    id: "filehawk",
+    name: "FileHawk.net",
+    eyebrow: "Local Semantic Search",
     tech: "Electron, Python, ChromaDB, SentenceTransformers",
-    description: "• Architected a cross-platform desktop app (Electron + React + Flask) that searches 50GB+ local data with sub-second responses; two-stage retrieval (ChromaDB vectors + rerank) reduced file searching time by 75%\n• Delivered high-precision semantic search using dual SentenceTransformers (MS MARCO / All-MiniLM) and a proprietary Gist ranker; intelligent chunking + caching drove 95% relevance across 25+ file types\n• Built real-time, incremental indexing (Watchdog + SHA-256 change detection) handling 10k+ file changes/hr",
-    link: "https://www.filehawk.net/",
+    summary:
+      "Cross-platform desktop search for large local folders, combining vector retrieval, reranking, and incremental indexing for fast semantic lookup.",
+    description:
+      "- Architected an Electron, React, and Flask app that searches 50GB+ of local data with sub-second responses.\n- Built a two-stage retrieval pipeline using ChromaDB vectors plus reranking, reducing file search time by 75%.\n- Delivered high-precision semantic search with dual SentenceTransformers and a proprietary Gist ranker across 25+ file types.\n- Added real-time incremental indexing with Watchdog and SHA-256 change detection, handling 10k+ file changes per hour.",
+    link: "#",
     video: "",
   },
   {
-    id: "proj-2",
-    name: "C-PASTA (Research Project)",
-    tech: "C++, OpenMP, OpenTimer, DAG-based Scheduling, Static Timing Analysis, Linux, Python",
-    description: "• Researched CPU task partitioning algorithms under Prof. Tsung-Wei Huang and PhD mentor Boyang Zhang\n• Built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics",
-    link: "https://github.com/kagrawal6/C-PASTA-Research-Project",
-    video: "",
-  },
-  {
-    id: "proj-3",
-    name: "High-Frequency Currency Arbitrage Engine",
-    tech: "C++, OpenMP, CUDA, Python, Real-Time Data, CMake",
-    description: "• Built a parallel HFT pipeline for real-time FX arbitrage, leveraging OpenMP and CUDA to accelerate graph-based detection and simulation across 19+ currency pairs\n• Streamlined ingestion and normalization of live FX data, modeling dynamic markets as time-indexed graphs and detecting arbitrage cycles with GPU-accelerated Bellman–Ford\n• Simulated trade execution with transaction cost and risk modeling, supporting dynamic position sizing and latency-aware strategies\n• Automated performance analytics and designed a scalable architecture for rapid deployment in high throughput trading environments",
-    link: "https://github.com/kagrawal6/CS759-Final-Project",
-    video: "",
-  },
-  {
-    id: "proj-4",
-    name: "FPGA Knight's Tour",
-    tech: "SystemVerilog, ModelSim, Synopsys Design Compiler, Quartus Prime",
-    description: "• Designed an FPGA-based autonomous robot to solve the Knight's Tour problem using SystemVerilog, integrating a PID controller, SPI for gyroscope data, and IR sensors for movement tracking\n• Achieved 333 MHz timing closure, reduced synthesized area by 25% through Synopsys standard cell optimizations monitored in Design Compiler, and lowered power consumption by 12% using gated clock designs\n• Developed a command processor with UART and SPI for Bluetooth control and inertial sensor integration\n• Built self-checking testbenches, ensuring full code coverage, post-synthesis validation, and FPGA performance",
-    link: "https://github.com/kagrawal6/FPGA-Knights-Tour",
-    video: "",
-  },
-  {
-    id: "proj-5",
-    name: "Partial Scan Optimization – b14 Viper Processor",
-    tech: "TCL, Synopsys Design Vision, TetraMax, ATPG, SCOAP, Verilog, STIL",
-    description: "• Architected and automated a custom partial scan DFT flow for a synthesized processor design, optimizing test coverage, area, and scan overhead under strict ATE pin constraints\n• Developed TCL-based tooling to drive flip-flop selection via SCOAP analysis, selectively excluding noncritical scan elements while preserving controllability/observability\n• Achieved >85% test coverage with >5× reduction in pattern count using coverage-constrained ATPG and scan chain tuning\n• Delivered >3× improvement in a weighted testability-performance metric (M), demonstrating strong command over scan design, ATPG strategy, and DFT tradeoff analysis",
-    link: "https://github.com/kagrawal6/Partial-Scan-Optimization-b14-Viper-Processor",
-    video: "",
-  },
-  {
-    id: "proj-6",
-    name: "ICCAD 2025 Problem C Incremental Placement Tool",
+    id: "iccad-placement",
+    name: "ICCAD 2025 Problem C",
+    eyebrow: "Incremental Placement Tool",
     tech: "C++, Python, Bash, TCL, OpenROAD, Verilog, DEF/LEF, Docker",
-    description: "• Developing a full-stack optimizer to improve ASIC placement by integrating cell relocation, gate sizing, and buffer/inverter insertion for better PPA (Power, Performance, Area)\n• Parsing and manipulating industry-standard formats (pl, v, .lef, .lib, .scl) to enable legal placement transformations with minimal cell displacement\n• Automating ECO-aware changelist generation using Python scripts and validating results via OpenROAD timing/power analysis\n• Building a scalable, GPU-ready toolchain containerized with Docker for reproducible benchmarking and performance testing",
+    summary:
+      "Full-stack ASIC placement optimizer for ECO-aware cell movement, gate sizing, and buffer insertion with reproducible benchmarking.",
+    description:
+      "- Developing a placement optimizer that integrates cell relocation, gate sizing, and buffer/inverter insertion for better PPA.\n- Parsing and manipulating industry-standard formats including PL, Verilog, LEF, LIB, SCL, and Synopsys ECO data.\n- Automating ECO-aware changelist generation and validating timing and power results through OpenROAD.\n- Building a scalable Dockerized toolchain designed for reproducible benchmarking and GPU-ready performance testing.",
     link: "#",
     video: "",
   },
   {
-    id: "proj-7",
+    id: "devpulse",
     name: "DevPulse",
+    eyebrow: "Test Intelligence CLI",
     tech: "TypeScript, Node.js, pnpm, Jest, Istanbul/LCOV, Commander.js, GitHub Actions",
-    description: "• Building a modular CLI tool for automated test suite analysis, including flakiness detection, coverage analysis, and actionable reporting for JavaScript/TypeScript projects\n• Designed a TypeScript monorepo (pnpm) with plugin-based analyzers and reporters, supporting parallel test execution and statistical flakiness scoring\n• Integrated Istanbul/LCOV coverage parsing and multi-format report generation (HTML, Markdown, JSON)\n• Automating CI workflows and PR feedback with GitHub Actions",
+    summary:
+      "Modular CLI for test-suite analysis, flakiness detection, coverage reporting, and CI-friendly developer feedback.",
+    description:
+      "- Building a TypeScript CLI for automated test suite analysis, including flakiness detection and actionable reporting.\n- Designed a pnpm monorepo with plugin-based analyzers and reporters for parallel test execution.\n- Integrated Istanbul/LCOV coverage parsing and report generation across HTML, Markdown, and JSON.\n- Automating CI workflows and pull request feedback with GitHub Actions.",
     link: "#",
     video: "",
   },
   {
-    id: "proj-8",
+    id: "currency-arbitrage",
+    name: "High-Frequency Currency Arbitrage Engine",
+    eyebrow: "ECE 759",
+    tech: "C++, OpenMP, CUDA, Python, Real-Time Data, CMake",
+    summary:
+      "Parallel FX arbitrage pipeline using graph algorithms, OpenMP, and CUDA to simulate low-latency trading across currency pairs.",
+    description:
+      "- Built a parallel HFT pipeline for real-time FX arbitrage across 19+ currency pairs.\n- Modeled markets as time-indexed graphs and accelerated arbitrage-cycle detection with GPU Bellman-Ford.\n- Simulated trade execution with transaction costs, risk modeling, dynamic position sizing, and latency-aware strategies.\n- Automated performance analytics for high-throughput trading experiments.",
+    link: "#",
+    video: "",
+  },
+  {
+    id: "partial-scan",
+    name: "Partial Scan Optimization",
+    eyebrow: "b14 Viper Processor",
+    tech: "TCL, Synopsys Design Vision, TetraMax, ATPG, SCOAP, Verilog, STIL",
+    summary:
+      "Custom DFT flow for scan selection, ATPG coverage, and testability optimization under strict ATE pin constraints.",
+    description:
+      "- Architected and automated a partial-scan DFT flow for a synthesized processor design.\n- Built TCL tooling for SCOAP-guided flip-flop selection while preserving controllability and observability.\n- Achieved over 85% test coverage with a greater than 5x reduction in pattern count.\n- Delivered a greater than 3x improvement in a weighted testability-performance metric.",
+    link: "#",
+    video: "",
+  },
+  {
+    id: "risc-processor",
     name: "5-Stage Pipelined RISC Processor",
+    eyebrow: "ECE 552",
     tech: "Verilog, ModelSim, Synopsys Design Compiler",
-    description: "• Designed a 16-bit, 5-stage pipelined processor in Verilog based on MIPS R2000, developing the data path and control path with an optimized ALU, forwarding, hazard detection, and branch prediction to minimize stalls\n• Implemented a pipelined microarchitecture with register file bypassing, forwarding, and branch prediction\n• Integrated a 2-way set-associative L1 instruction and data cache with direct-mapped and write-back policies",
-    link: "https://github.com/kagrawal6/5-Stage-Pipelined-RISC-Processor",
+    summary:
+      "16-bit pipelined processor with forwarding, hazard detection, branch prediction, and set-associative L1 caches.",
+    description:
+      "- Designed a 16-bit, 5-stage pipelined processor in Verilog based on the MIPS R2000.\n- Developed datapath and control logic with optimized ALU behavior, forwarding, hazard detection, and branch prediction.\n- Implemented register-file bypassing and stall minimization across pipeline stages.\n- Integrated 2-way set-associative L1 instruction and data caches with write-back behavior.",
+    link: "#",
     video: "",
   },
   {
-    id: "proj-9",
+    id: "knights-tour",
+    name: "FPGA Knight's Tour",
+    eyebrow: "ECE 551",
+    tech: "SystemVerilog, ModelSim, Synopsys Design Compiler, Quartus Prime",
+    summary:
+      "Autonomous FPGA robot control system combining movement planning, PID control, SPI sensing, Bluetooth, and timing closure.",
+    description:
+      "- Designed an FPGA-based autonomous robot to solve the Knight's Tour problem in SystemVerilog.\n- Integrated PID control, SPI gyroscope data, IR sensors, UART, and Bluetooth command processing.\n- Achieved 333 MHz timing closure while reducing synthesized area by 25% and power by 12%.\n- Built self-checking testbenches for code coverage, post-synthesis validation, and FPGA performance.",
+    link: "#",
+    video: "",
+  },
+  {
+    id: "fuse-filesystem",
     name: "FUSE-Based Linux Filesystem",
+    eyebrow: "COMP SCI 537",
     tech: "C, Bash, Python, Emacs Lisp, FUSE, GDB, POSIX",
-    description: "• Developed a user-space filesystem in C using FUSE, enabling file creation, deletion, reading, writing, and directory management with inode-based storage and indirect block mapping for large file support\n• Implemented RAID 0 for data striping and RAID 1 for mirroring, ensuring redundancy and fault tolerance\n• Designed and mounted the filesystem with superblock-based metadata tracking, block allocation via bitmaps, and efficient disk operations to support real-world storage requirements\n• Validated filesystem stability using gdb, disk inspection, and automated Python tests with POSIX commands",
+    summary:
+      "User-space filesystem with inode-backed storage, indirect block mapping, RAID striping, mirroring, and POSIX validation.",
+    description:
+      "- Developed a user-space filesystem in C using FUSE for creation, deletion, reading, writing, and directories.\n- Implemented inode-based storage with indirect block mapping for larger files.\n- Added RAID 0 striping and RAID 1 mirroring for performance and redundancy.\n- Validated stability through gdb, disk inspection, automated Python tests, and POSIX commands.",
     link: "#",
     video: "",
   },
   {
-    id: "proj-10",
+    id: "xv6-memory",
     name: "xv6 Memory Mapping with Copy-on-Write",
+    eyebrow: "COMP SCI 537",
     tech: "C, xv6, x86 Paging, GDB, Makefile, Bash, Python",
-    description: "• Implemented memory-mapped file support in xv6, enabling file-backed and anonymous memory allocations with lazy page allocation, demand paging, and page fault handling to optimize memory usage\n• Optimized process memory with Copy-on-Write, reducing duplication via shared pages and reference counting\n• Enforced ELF segment protections, preventing unauthorized writes, and ensuring safe concurrent access with locks",
+    summary:
+      "Kernel memory-management work adding mmap, lazy allocation, page fault handling, copy-on-write, and ELF protections.",
+    description:
+      "- Implemented file-backed and anonymous memory mappings in xv6.\n- Added lazy page allocation, demand paging, and page fault handling to reduce memory pressure.\n- Optimized process memory with copy-on-write, shared pages, and reference counting.\n- Enforced ELF segment protections and safe concurrent access with locks.",
     link: "#",
     video: "",
   },
   {
-    id: "proj-11",
+    id: "matching-squares",
     name: "Two-Player Matching Squares Game",
+    eyebrow: "ECE 353",
     tech: "C, FreeRTOS, MSP432, PSoC 6, SPI, I2C, UART",
-    description: "• Developed an embedded systems game in C on an MSP432 Launchpad and PSoC 6, utilizing FreeRTOS\n• Used SPI and I2C to interface with sensors and peripherals on PSoC 6, integrating an accelerometer, joystick, light sensors, and an LCD for real-time player control and feedback\n• Implemented UART for multiplayer communication between two boards, enabling real-time data transmission",
+    summary:
+      "Embedded multiplayer game using FreeRTOS, sensors, LCD feedback, and UART communication between boards.",
+    description:
+      "- Developed an embedded systems game in C on MSP432 and PSoC 6 hardware using FreeRTOS.\n- Used SPI and I2C to integrate accelerometer, joystick, light sensors, and LCD feedback.\n- Implemented UART communication for real-time multiplayer state transfer between two boards.",
     link: "#",
     video: "",
   },
   {
-    id: "proj-12",
+    id: "heap-simulator",
     name: "Heap Simulator",
+    eyebrow: "ECE 354",
     tech: "C, Git, Makefile",
-    description: "• Engineered a dynamic memory management system, implementing best-fit placement, splitting, and immediate coalescing to efficiently handle allocation and deallocation of memory blocks\n• Simulated a 1 MB heap, leveraging pointer arithmetic, bit masking, and header/footer management to achieve precise memory block tracking\n• Designed and automated extensive test cases with Makefile scripts to simulate complex allocation scenarios",
+    summary:
+      "Dynamic memory allocator simulation with best-fit placement, splitting, coalescing, and automated allocation tests.",
+    description:
+      "- Engineered a dynamic memory management system with best-fit placement, splitting, and immediate coalescing.\n- Simulated a 1 MB heap using pointer arithmetic, bit masking, and header/footer metadata.\n- Designed automated Makefile-driven test cases for complex allocation and deallocation scenarios.",
     link: "#",
     video: "",
   },

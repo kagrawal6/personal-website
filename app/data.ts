@@ -11,6 +11,11 @@ export type Project = {
   video: string
 }
 
+export type WorkExperienceSection = {
+  period: string
+  detail: string
+}
+
 export type WorkExperience = {
   id: string
   company: string
@@ -19,6 +24,9 @@ export type WorkExperience = {
   end: string
   link: string
   logo?: string
+  summary?: string
+  sections?: WorkExperienceSection[]
+  description?: string
 }
 
 export type BlogPost = {
@@ -202,46 +210,74 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: "work-google-capstone",
     company: "Google (Capstone)",
     title: "Software Egineering Intern",
-    start: "Jan 2026",
+    start: "Feb 2026",
     end: "May 2026",
-    link: "#",
+    link: "https://github.com/kagrawal6/Iotriage-Google-capstone",
     logo: "/images/google-logo.png",
-  },
-  {
-    id: "work-2",
-    company: "Endress+Hauser",
-    title: "Embedded Software Engineering Co-op",
-    start: "May 2025",
-    end: "Present",
-    link: "#",
-    logo: "/images/endress-hauser-logo.png",
-  },
-  {
-    id: "work-3",
-    company: "Endress+Hauser",
-    title: "Software Engineering Intern",
-    start: "May 2024",
-    end: "August 2024",
-    link: "#",
-    logo: "/images/endress-hauser-logo.png",
+    description:
+      "- Built IoTriage, a full-stack tool that scans a local network for IoT devices, identifies known vulnerabilities via the NIST NVD, and generates Gemini remediation guidance (Python Nmap scanner, Express, React).\n- Built a rate-limit-aware NVD client with severity and false-positive filtering for accurate vulnerability rankings.\n- Built scan-grounded Gemini chat with SSE streaming and CISA KEV–backed mitigation steps for triage.",
   },
   {
     id: "work-4",
-    company: "Department of ECE",
+    company: "University of Wisconsin-Madison",
     title: "Undergraduate Teaching Assistant",
     start: "September 2023",
     end: "May 2026",
     link: "#",
     logo: "/images/uw-ece-logo.png",
+    sections: [
+      {
+        period: "Jan 2026 - May 2026",
+        detail: "Digital System Fundamentals (ECE 352) under Prof. Setareh Behroozi.",
+      },
+      {
+        period: "Sep 2023 - May 2025",
+        detail: "Introduction to Computer Engineering (ECE 252) under Prof. Setareh Behroozi.",
+      },
+      {
+        period: "Sep 2024 - Dec 2024",
+        detail: "Machine Organization & Programming (CS 354) under Prof. Debra Deppeler",
+      },
+    ],
+    description:
+      "- Led office hours for 850+ students and instructed them in topics including digital logic design, processor architecture, RTL design, finite state machines, timing analysis, pipelining, C/assembly programming, and memory hierarchy.",
+  },
+  {
+    id: "work-2",
+    company: "Endress+Hauser Group",
+    title: "Embedded Software Engineering Co-op",
+    start: "May 2025",
+    end: "Dec 2025",
+    link: "#",
+    logo: "/images/endress-hauser-logo.png",
+    summary:
+      "Worked on the Digital Transformation Solutions team",
+    description:
+      "- Engineered a Dockerized full-stack Netilion IIoT simulator (React/TypeScript, Python/FastAPI) with 30+ REST endpoints, 5 simulation patterns and 200+ health codes, streaming real-time data for hardware-free demos.\n- Characterized Bluetooth 6.2 performance on the nRF54L15 via Channel Sounding and multi-device tests, analyzing ranging accuracy, packet reliability, and RF congestion effects for the SGC200 Bluetooth-to-cloud gateway.\n- Conducted performance testing and QA for the Digital Commissioning App; documented workflows, and proposed UI/UX and offline-first architecture changes tied to $180K–$400K global initiatives.\n- Designed OPC UA and REST-based data pipes bridging Netilion IIoT with Snowflake via edge middleware clients.",
+  },
+  {
+    id: "work-3",
+    company: "Endress+Hauser Group",
+    title: "Software Engineering Intern",
+    start: "May 2024",
+    end: "Aug 2024",
+    link: "#",
+    logo: "/images/endress-hauser-logo.png",
+    summary: "Worked on the Digital Transformation Solutions team.",
+    description:
+      "- Overhauled an outdated 14-step subscription workflow for Netilion, an IIoT cloud platform, proposing solutions that projected a 70% reduction in operational costs and processing time.\n- Led Salesforce dashboard and folder cleanup; built and deployed a Node.js naming web tool (TypeScript/React), integrated it as an extension, and proposed to 10 departments, potentially saving $40,000 in workforce hours.\n- Engineered an IoT temperature display by designing a custom circuit that integrates an industrial temperature probe with a microprocessor, enabling real-time data visualization and remote monitoring via ThingSpeak and JavaScript.",
   },
   {
     id: "work-5",
-    company: "Larsen Toubro Defence IC",
+    company: "Larsen & Toubro",
     title: "Software Engineering Intern",
     start: "May 2023",
-    end: "August 2023",
+    end: "Aug 2023",
     link: "#",
     logo: "/images/larsen-toubro-logo.png",
+    summary: "Worked in the IT team at Larsen & Toubro Defence",
+    description:
+      "- Created a data visualization dashboard using Power BI and MySQL, analyzing 100000 employee task tickets from 5 business units over 2 years to monitor task completion and performance\n- Developed and deployed a robust hit counter across 4 internal intranet portals, utilized by over 4000 employees, using C#, HTML, and the .NET framework to survey portal usage data\n- Executed QA performance testing across 5 intranet web portals to identify bugs and validate accurate implementation of features and workflows",
   },
 ]
 

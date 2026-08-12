@@ -12,6 +12,7 @@ import {
   WORK_EXPERIENCE,
   Project,
   ProjectCategory,
+  WorkExperience,
 } from "./data"
 
 const VARIANTS_CONTAINER = {
@@ -43,6 +44,7 @@ const PROJECT_FILTERS: { id: ProjectFilter; label: string }[] = [
 
 export default function Personal() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [selectedJob, setSelectedJob] = useState<WorkExperience | null>(null)
   const [showAllProjects, setShowAllProjects] = useState(false)
   const [projectFilter, setProjectFilter] = useState<ProjectFilter>("all")
 
@@ -197,14 +199,13 @@ export default function Personal() {
           variants={VARIANTS_SECTION}
           transition={TRANSITION_SECTION}
         >
-          <h3 className="mb-5 text-lg font-medium text-maroon">Work Experience</h3>
+          <h3 className="mb-5 text-lg font-medium text-maroon">Experience</h3>
           <div className="flex flex-col space-y-2">
             {WORK_EXPERIENCE.map((job) => (
-              <a
-                className="glass-hover relative block overflow-hidden rounded-2xl bg-card/40 p-4"
-                href={job.link}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                className="glass-hover relative block w-full overflow-hidden rounded-2xl bg-card/40 p-4 text-left"
+                onClick={() => setSelectedJob(job)}
                 key={job.id}
               >
                 <div className="relative flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -225,7 +226,7 @@ export default function Personal() {
                     {job.start} - {job.end}
                   </p>
                 </div>
-              </a>
+              </button>
             ))}
           </div>
         </motion.section>
@@ -237,7 +238,7 @@ export default function Personal() {
           transition={TRANSITION_SECTION}
         >
           <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-            <h3 className="text-lg font-medium text-maroon">Featured Projects</h3>
+            <h3 className="text-lg font-medium text-maroon">Projects</h3>
             <div
               className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-card/40 p-1"
               role="group"
@@ -396,9 +397,6 @@ export default function Personal() {
                     <ArrowUpRightIcon className="h-4 w-4" />
                   </a>
                 )}
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {selectedProject.summary}
-                </p>
                 <p className="mt-4 rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground">
                   {selectedProject.tech}
                 </p>
@@ -416,6 +414,95 @@ export default function Personal() {
                       ))}
                   </ul>
                 </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {selectedJob && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/55 backdrop-blur-sm"
+              onClick={() => setSelectedJob(null)}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
+              className="fixed left-1/2 top-1/2 z-50 flex aspect-square w-[min(90vw,36rem)] -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl"
+            >
+              <button
+                onClick={() => setSelectedJob(null)}
+                className="absolute right-4 top-4 z-10 rounded-full p-1 transition-colors hover:bg-muted"
+                aria-label="Close experience details"
+              >
+                <XIcon className="h-5 w-5 text-muted-foreground" />
+              </button>
+
+              <div className="flex min-h-0 flex-1 flex-col p-6">
+                <h2 className="pr-8 text-2xl font-semibold text-foreground">
+                  {selectedJob.title}
+                </h2>
+                <p className="mt-2 text-base text-muted-foreground">
+                  {selectedJob.company}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {selectedJob.start} - {selectedJob.end}
+                </p>
+
+                <div className="mt-5 min-h-0 flex-1 overflow-y-auto pr-1 space-y-4">
+                  {selectedJob.summary ? (
+                    <p className="text-sm leading-6 text-foreground/80">
+                      {selectedJob.summary}
+                    </p>
+                  ) : null}
+                  {selectedJob.sections?.length ? (
+                    <div className="space-y-4">
+                      {selectedJob.sections.map((section) => (
+                        <div key={`${section.period}-${section.detail}`}>
+                          <p className="text-sm font-semibold text-maroon">
+                            {section.period}
+                          </p>
+                          <p className="mt-1 text-sm leading-6 text-foreground/80">
+                            {section.detail}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
+                  {selectedJob.description ? (
+                    <ul className="space-y-3 text-sm leading-6 text-foreground/80">
+                      {selectedJob.description
+                        .split("\n")
+                        .map((line) => line.replace(/^- /, ""))
+                        .filter(Boolean)
+                        .map((line) => (
+                          <li key={line} className="flex gap-3">
+                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-maroon/70" />
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                    </ul>
+                  ) : null}
+                </div>
+
+                {selectedJob.link && selectedJob.link !== "#" && (
+                  <a
+                    href={selectedJob.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-1 text-base font-medium text-maroon transition-colors hover:opacity-70"
+                  >
+                    Visit project
+                    <ArrowUpRightIcon className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </motion.div>
           </>

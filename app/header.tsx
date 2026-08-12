@@ -1,40 +1,46 @@
 "use client"
 
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { motion, LayoutGroup } from "motion/react"
 import { TextEffect } from "@/components/ui/text-effect"
 import { useEffect, useState } from "react"
 import { EMAIL } from "./data"
 
 const navItems = [
-  { name: "home", path: "/" },
-  { name: "projects", path: "/projects" },
+  { name: "home", id: "top" },
+  { name: "projects", id: "projects" },
 ]
 
 export function Header() {
-  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
-  const [showBubble, setShowBubble] = useState(true)
+  const [activeSection, setActiveSection] = useState("top")
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
+
+      const projects = document.getElementById("projects")
+      if (!projects) return
+
+      const headerOffset = 120
+      setActiveSection(
+        projects.getBoundingClientRect().top <= headerOffset ? "projects" : "top",
+      )
     }
-    window.addEventListener("scroll", handleScroll)
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  useEffect(() => {
-    setShowBubble(false)
-    window.scrollTo({ top: 0, behavior: "instant" })
+  const scrollToSection = (id: string) => {
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      return
+    }
 
-    const timer = setTimeout(() => {
-      setShowBubble(true)
-    }, 10)
-
-    return () => clearTimeout(timer)
-  }, [pathname])
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
 
   return (
     <header
@@ -59,14 +65,15 @@ export function Header() {
       <LayoutGroup>
         <nav className="relative flex items-center flex-wrap gap-1">
           {navItems.map((item) => {
-            const isActive = pathname === item.path
+            const isActive = activeSection === item.id
             return (
-              <Link
-                key={item.path}
-                href={item.path}
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => scrollToSection(item.id)}
                 className="relative px-2 sm:px-4 py-2 text-xs sm:text-sm transition-colors rounded-full"
               >
-                {isActive && showBubble && (
+                {isActive && (
                   <motion.div
                     className="nav-active-pill absolute inset-0 rounded-full overflow-hidden"
                     initial={{ opacity: 0 }}
@@ -85,7 +92,7 @@ export function Header() {
                 >
                   {item.name}
                 </span>
-              </Link>
+              </button>
             )
           })}
         </nav>

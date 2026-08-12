@@ -214,6 +214,7 @@ export default function Personal() {
 
         <motion.section
           id="projects"
+          className="scroll-mt-28"
           variants={VARIANTS_SECTION}
           transition={TRANSITION_SECTION}
         >
@@ -227,15 +228,6 @@ export default function Personal() {
                   className="glass-hover group relative flex min-h-72 w-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/45 p-6 text-left shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon/40"
                 >
                   <div className="relative flex h-full flex-col">
-                    <div className="mb-7 flex items-start justify-between gap-3">
-                      <p className="text-xs font-medium uppercase tracking-[0.08em] text-muted-foreground">
-                        {project.eyebrow}
-                      </p>
-                      <span className="rounded-full bg-muted px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.04em] text-muted-foreground">
-                        featured
-                      </span>
-                    </div>
-
                     <h4 className="mb-3 text-xl font-semibold text-foreground">
                       {project.name}
                     </h4>
@@ -345,9 +337,6 @@ export default function Personal() {
               </button>
 
               <div className="flex min-h-0 flex-1 flex-col p-6">
-                <p className="mb-3 text-xs font-medium uppercase tracking-[0.08em] text-maroon">
-                  {selectedProject.eyebrow}
-                </p>
                 <h2 className="pr-8 text-2xl font-semibold text-foreground">
                   {selectedProject.name}
                 </h2>

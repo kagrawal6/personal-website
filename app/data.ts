@@ -1,7 +1,6 @@
 export type Project = {
   id: string
   name: string
-  eyebrow: string
   tech: string
   summary: string
   description: string
@@ -53,7 +52,6 @@ export const PROJECTS: Project[] = [
   {
     id: "filehawk",
     name: "FileHawk.net",
-    eyebrow: "Local Semantic Search",
     tech: "Electron, Python, ChromaDB, SentenceTransformers",
     summary:
       "Cross-platform desktop search for large local folders, combining vector retrieval, reranking, and incremental indexing for fast semantic lookup.",
@@ -65,7 +63,6 @@ export const PROJECTS: Project[] = [
   {
     id: "iccad-placement",
     name: "ICCAD 2025 Problem C",
-    eyebrow: "Incremental Placement Tool",
     tech: "C++, Python, Bash, TCL, OpenROAD, Verilog, DEF/LEF, Docker",
     summary:
       "Full-stack ASIC placement optimizer for ECO-aware cell movement, gate sizing, and buffer insertion with reproducible benchmarking.",
@@ -77,7 +74,6 @@ export const PROJECTS: Project[] = [
   {
     id: "devpulse",
     name: "DevPulse",
-    eyebrow: "Test Intelligence CLI",
     tech: "TypeScript, Node.js, pnpm, Jest, Istanbul/LCOV, Commander.js, GitHub Actions",
     summary:
       "Modular CLI for test-suite analysis, flakiness detection, coverage reporting, and CI-friendly developer feedback.",
@@ -89,7 +85,6 @@ export const PROJECTS: Project[] = [
   {
     id: "currency-arbitrage",
     name: "High-Frequency Currency Arbitrage Engine",
-    eyebrow: "ECE 759",
     tech: "C++, OpenMP, CUDA, Python, Real-Time Data, CMake",
     summary:
       "Parallel FX arbitrage pipeline using graph algorithms, OpenMP, and CUDA to simulate low-latency trading across currency pairs.",
@@ -101,7 +96,6 @@ export const PROJECTS: Project[] = [
   {
     id: "partial-scan",
     name: "Partial Scan Optimization",
-    eyebrow: "b14 Viper Processor",
     tech: "TCL, Synopsys Design Vision, TetraMax, ATPG, SCOAP, Verilog, STIL",
     summary:
       "Custom DFT flow for scan selection, ATPG coverage, and testability optimization under strict ATE pin constraints.",
@@ -113,7 +107,6 @@ export const PROJECTS: Project[] = [
   {
     id: "risc-processor",
     name: "5-Stage Pipelined RISC Processor",
-    eyebrow: "ECE 552",
     tech: "Verilog, ModelSim, Synopsys Design Compiler",
     summary:
       "16-bit pipelined processor with forwarding, hazard detection, branch prediction, and set-associative L1 caches.",
@@ -125,7 +118,6 @@ export const PROJECTS: Project[] = [
   {
     id: "knights-tour",
     name: "FPGA Knight's Tour",
-    eyebrow: "ECE 551",
     tech: "SystemVerilog, ModelSim, Synopsys Design Compiler, Quartus Prime",
     summary:
       "Autonomous FPGA robot control system combining movement planning, PID control, SPI sensing, Bluetooth, and timing closure.",
@@ -137,7 +129,6 @@ export const PROJECTS: Project[] = [
   {
     id: "fuse-filesystem",
     name: "FUSE-Based Linux Filesystem",
-    eyebrow: "COMP SCI 537",
     tech: "C, Bash, Python, Emacs Lisp, FUSE, GDB, POSIX",
     summary:
       "User-space filesystem with inode-backed storage, indirect block mapping, RAID striping, mirroring, and POSIX validation.",
@@ -149,7 +140,6 @@ export const PROJECTS: Project[] = [
   {
     id: "xv6-memory",
     name: "xv6 Memory Mapping with Copy-on-Write",
-    eyebrow: "COMP SCI 537",
     tech: "C, xv6, x86 Paging, GDB, Makefile, Bash, Python",
     summary:
       "Kernel memory-management work adding mmap, lazy allocation, page fault handling, copy-on-write, and ELF protections.",
@@ -161,7 +151,6 @@ export const PROJECTS: Project[] = [
   {
     id: "matching-squares",
     name: "Two-Player Matching Squares Game",
-    eyebrow: "ECE 353",
     tech: "C, FreeRTOS, MSP432, PSoC 6, SPI, I2C, UART",
     summary:
       "Embedded multiplayer game using FreeRTOS, sensors, LCD feedback, and UART communication between boards.",
@@ -173,7 +162,6 @@ export const PROJECTS: Project[] = [
   {
     id: "heap-simulator",
     name: "Heap Simulator",
-    eyebrow: "ECE 354",
     tech: "C, Git, Makefile",
     summary:
       "Dynamic memory allocator simulation with best-fit placement, splitting, coalescing, and automated allocation tests.",

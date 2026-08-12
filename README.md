@@ -1,42 +1,87 @@
-# Business card website
+# Kushal Agrawal — Personal Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+A minimal portfolio site built with Next.js. It covers education, work experience, featured projects, and a live Spotify “recently played” widget.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/kushal-agrawals-projects-8574e427/v0-business-card-website)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/uHly3FjuhK6)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com)
 
-## Overview
+## Features
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+- **Single-page portfolio** — About, education, experience, and projects on one scrollable page
+- **Project modals** — Expandable cards with detailed descriptions and tech stacks
+- **Spotify integration** — Recently played track via the Spotify Web API
+- **Motion animations** — Page transitions and scroll effects with Motion
+- **Light / dark theme** — System-aware theme switching
 
-## Deployment
+## Tech Stack
 
-Your project is live at:
+| Layer | Tools |
+| --- | --- |
+| Framework | [Next.js 14](https://nextjs.org/) (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Animation | [Motion](https://motion.dev/) |
+| UI | Radix UI, Lucide icons |
+| Analytics | Vercel Analytics |
+| Package manager | pnpm |
 
-**[https://vercel.com/kushal-agrawals-projects-8574e427/v0-business-card-website](https://vercel.com/kushal-agrawals-projects-8574e427/v0-business-card-website)**
+## Getting Started
 
-## Build your app
+### Prerequisites
 
-Continue building your app on:
+- [Node.js](https://nodejs.org/) 18+
+- [pnpm](https://pnpm.io/)
 
-**[https://v0.app/chat/projects/uHly3FjuhK6](https://v0.app/chat/projects/uHly3FjuhK6)**
+### Install and run
 
-## Run locally
+```bash
+pnpm install
+pnpm dev
+```
 
-1. Install dependencies (project uses pnpm):
-   ```bash
-   pnpm install
-   ```
-2. Start the Next.js dev server:
-   ```bash
-   pnpm dev
-   ```
-3. Open `http://localhost:3000` in your browser to view the site.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## How It Works
+### Other scripts
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+pnpm build    # Production build
+pnpm start    # Run production server
+pnpm lint     # Run ESLint
+```
+
+## Environment Variables
+
+Spotify recently played is optional. Without credentials, the site falls back to static placeholder data.
+
+Create a `.env.local` file in the project root:
+
+```env
+SPOTIFY_CLIENT_ID=your_client_id
+SPOTIFY_CLIENT_SECRET=your_client_secret
+SPOTIFY_REFRESH_TOKEN=your_refresh_token
+```
+
+## Project Structure
+
+```
+app/
+├── page.tsx              # Main portfolio page
+├── data.ts               # Projects, experience, and site content
+├── header.tsx / footer.tsx
+├── api/spotify/          # Spotify recently-played endpoint
+components/
+├── spotify-recently-played.tsx
+└── ui/                   # Reusable UI primitives
+public/
+└── images/               # Logos, profile photo, resume
+```
+
+## Content
+
+Site content lives in `app/data.ts`. Update projects, work experience, about text, and social links there.
+
+## License
+
+Private — all rights reserved.

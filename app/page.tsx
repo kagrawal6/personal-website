@@ -11,6 +11,7 @@ import {
   RECENTLY_PLAYED,
   WORK_EXPERIENCE,
   Project,
+  ProjectCategory,
 } from "./data"
 
 const VARIANTS_CONTAINER = {
@@ -32,10 +33,27 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
+type ProjectFilter = "all" | ProjectCategory
+
+const PROJECT_FILTERS: { id: ProjectFilter; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "hardware", label: "Hardware" },
+  { id: "software", label: "Software" },
+]
+
 export default function Personal() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [showAllProjects, setShowAllProjects] = useState(false)
-  const visibleProjects = showAllProjects ? PROJECTS : PROJECTS.slice(0, 6)
+  const [projectFilter, setProjectFilter] = useState<ProjectFilter>("all")
+
+  const filteredProjects =
+    projectFilter === "all"
+      ? PROJECTS
+      : PROJECTS.filter((project) => project.category === projectFilter)
+
+  const visibleProjects = showAllProjects
+    ? filteredProjects
+    : filteredProjects.slice(0, 6)
 
   return (
     <>
@@ -218,7 +236,35 @@ export default function Personal() {
           variants={VARIANTS_SECTION}
           transition={TRANSITION_SECTION}
         >
-          <h3 className="mb-5 text-lg font-medium text-maroon">Featured Projects</h3>
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <h3 className="text-lg font-medium text-maroon">Featured Projects</h3>
+            <div
+              className="inline-flex items-center gap-1 rounded-full border border-border/70 bg-card/40 p-1"
+              role="group"
+              aria-label="Filter projects"
+            >
+              {PROJECT_FILTERS.map((filter) => {
+                const isActive = projectFilter === filter.id
+                return (
+                  <button
+                    key={filter.id}
+                    type="button"
+                    onClick={() => {
+                      setProjectFilter(filter.id)
+                      setShowAllProjects(false)
+                    }}
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                      isActive
+                        ? "bg-maroon text-white"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {filter.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
           <div className="relative">
             <div className="grid auto-rows-fr gap-4 sm:grid-cols-2">
               {visibleProjects.map((project) => (
@@ -250,7 +296,7 @@ export default function Personal() {
               ))}
             </div>
 
-            {!showAllProjects && (
+            {!showAllProjects && filteredProjects.length > 6 && (
               <div className="pointer-events-none absolute inset-x-0 bottom-0 flex h-40 items-end justify-center bg-gradient-to-b from-background/0 via-background/80 to-background pb-6">
                 <button
                   type="button"
@@ -262,7 +308,7 @@ export default function Personal() {
               </div>
             )}
 
-            {showAllProjects && (
+            {showAllProjects && filteredProjects.length > 6 && (
               <div className="flex justify-center pt-5">
                 <button
                   type="button"
@@ -339,6 +385,17 @@ export default function Personal() {
                 <h2 className="pr-8 text-2xl font-semibold text-foreground">
                   {selectedProject.name}
                 </h2>
+                {selectedProject.link && selectedProject.link !== "#" && (
+                  <a
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-1 text-base font-medium text-maroon transition-colors hover:opacity-70"
+                  >
+                    Visit project
+                    <ArrowUpRightIcon className="h-4 w-4" />
+                  </a>
+                )}
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
                   {selectedProject.summary}
                 </p>
@@ -359,18 +416,6 @@ export default function Personal() {
                       ))}
                   </ul>
                 </div>
-
-                {selectedProject.link && selectedProject.link !== "#" && (
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-maroon transition-colors hover:opacity-70"
-                  >
-                    Visit project
-                    <ArrowUpRightIcon className="h-3.5 w-3.5" />
-                  </a>
-                )}
               </div>
             </motion.div>
           </>

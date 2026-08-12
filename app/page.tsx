@@ -220,39 +220,38 @@ export default function Personal() {
         >
           <h3 className="mb-5 text-lg font-medium text-maroon">Featured Projects</h3>
           <div className="relative">
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid auto-rows-fr gap-4 sm:grid-cols-2">
               {visibleProjects.map((project) => (
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="glass-hover group relative flex min-h-72 w-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/45 p-6 text-left shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon/40"
+                  className="glass-hover group relative flex h-full min-h-[15.5rem] w-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-card/45 p-5 text-left shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon/40"
                 >
-                  <div className="relative flex h-full flex-col">
-                    <h4 className="mb-3 text-xl font-semibold text-foreground">
+                  <div className="mb-3 flex items-start justify-between gap-3">
+                    <h4 className="line-clamp-2 min-h-[3.5rem] text-xl font-semibold text-foreground">
                       {project.name}
                     </h4>
-
-                    <p className="text-sm leading-6 text-muted-foreground">
-                      {project.summary}
-                    </p>
-
-                    <div className="mt-auto pt-8">
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-foreground transition-colors group-hover:text-maroon">
-                        Open details
-                        <ArrowUpRightIcon className="h-3.5 w-3.5" />
-                      </span>
-                    </div>
-
-                    <p className="mt-4 truncate text-xs text-muted-foreground/60">
-                      {project.tech}
-                    </p>
+                    <span
+                      aria-hidden
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border/80 text-muted-foreground transition-transform duration-200 group-hover:scale-110"
+                    >
+                      <ArrowUpRightIcon className="h-4 w-4" />
+                    </span>
                   </div>
+
+                  <p className="line-clamp-4 flex-1 text-sm leading-6 text-muted-foreground">
+                    {project.summary}
+                  </p>
+
+                  <p className="mt-4 truncate text-xs text-muted-foreground/60">
+                    {project.tech}
+                  </p>
                 </button>
               ))}
             </div>
 
             {!showAllProjects && (
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex h-56 items-end justify-center bg-gradient-to-b from-background/0 via-background/80 to-background pb-6">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 flex h-40 items-end justify-center bg-gradient-to-b from-background/0 via-background/80 to-background pb-6">
                 <button
                   type="button"
                   onClick={() => setShowAllProjects(true)}

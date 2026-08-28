@@ -16,6 +16,11 @@ export type WorkExperienceSection = {
   detail: string
 }
 
+export type WorkExperienceLink = {
+  label: string
+  link: string
+}
+
 export type WorkExperience = {
   id: string
   company: string
@@ -27,6 +32,7 @@ export type WorkExperience = {
   summary?: string
   sections?: WorkExperienceSection[]
   description?: string
+  links?: WorkExperienceLink[]
 }
 
 export type BlogPost = {
@@ -241,6 +247,12 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     ],
     description:
       "- Led office hours for 850+ students and instructed them in topics including digital logic design, processor architecture, RTL design, finite state machines, timing analysis, pipelining, C/assembly programming, and memory hierarchy.",
+    links: [
+      {
+        label: "View ECE courses",
+        link: "https://guide.wisc.edu/courses/e_c_e/",
+      },
+    ],
   },
   {
     id: "work-2",
@@ -254,6 +266,20 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       "Worked on the Digital Transformation Solutions team",
     description:
       "- Engineered a Dockerized full-stack Netilion IIoT simulator (React/TypeScript, Python/FastAPI) with 30+ REST endpoints, 5 simulation patterns and 200+ health codes, streaming real-time data for hardware-free demos.\n- Characterized Bluetooth 6.2 performance on the nRF54L15 via Channel Sounding and multi-device tests, analyzing ranging accuracy, packet reliability, and RF congestion effects for the SGC200 Bluetooth-to-cloud gateway.\n- Conducted performance testing and QA for the Digital Commissioning App; documented workflows, and proposed UI/UX and offline-first architecture changes tied to $180K–$400K global initiatives.\n- Designed OPC UA and REST-based data pipes bridging Netilion IIoT with Snowflake via edge middleware clients.",
+    links: [
+      {
+        label: "Netilion IIoT",
+        link: "https://www.us.endress.com/en/field-instruments-overview/netilion-iiot",
+      },
+      {
+        label: "Digitalization at Endress",
+        link: "https://www.us.endress.com/en/digitalization",
+      },
+      {
+        label: "Digital Commissioning App",
+        link: "https://www.us.endress.com/en/instrumentation-services/project-and-commissioning-services/digital-commissioning-application",
+      },
+    ],
   },
   {
     id: "work-3",
@@ -266,6 +292,16 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     summary: "Worked on the Digital Transformation Solutions team.",
     description:
       "- Overhauled an outdated 14-step subscription workflow for Netilion, an IIoT cloud platform, proposing solutions that projected a 70% reduction in operational costs and processing time.\n- Led Salesforce dashboard and folder cleanup; built and deployed a Node.js naming web tool (TypeScript/React), integrated it as an extension, and proposed to 10 departments, potentially saving $40,000 in workforce hours.\n- Engineered an IoT temperature display by designing a custom circuit that integrates an industrial temperature probe with a microprocessor, enabling real-time data visualization and remote monitoring via ThingSpeak and JavaScript.",
+    links: [
+      {
+        label: "Netilion IIoT",
+        link: "https://www.us.endress.com/en/field-instruments-overview/netilion-iiot",
+      },
+      {
+        label: "Digitalization at Endress",
+        link: "https://www.us.endress.com/en/digitalization",
+      },
+    ],
   },
   {
     id: "work-5",

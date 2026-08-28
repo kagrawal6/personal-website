@@ -130,7 +130,7 @@ export default function Personal() {
                     >
                       <a
                         role="menuitem"
-                        href="/resume-software.pdf"
+                        href="/images/resume-software.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setResumeOpen(false)}
@@ -140,7 +140,7 @@ export default function Personal() {
                       </a>
                       <a
                         role="menuitem"
-                        href="/resume-hardware.pdf"
+                        href="/images/resume-hardware.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setResumeOpen(false)}
@@ -531,7 +531,22 @@ export default function Personal() {
                   ) : null}
                 </div>
 
-                {selectedJob.link && selectedJob.link !== "#" && (
+                {selectedJob.links?.length ? (
+                  <div className="mt-5 flex flex-col gap-2">
+                    {selectedJob.links.map((item) => (
+                      <a
+                        key={item.link}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-base font-medium text-maroon transition-colors hover:opacity-70"
+                      >
+                        {item.label}
+                        <ArrowUpRightIcon className="h-4 w-4" />
+                      </a>
+                    ))}
+                  </div>
+                ) : selectedJob.link && selectedJob.link !== "#" ? (
                   <a
                     href={selectedJob.link}
                     target="_blank"
@@ -541,7 +556,7 @@ export default function Personal() {
                     Visit project
                     <ArrowUpRightIcon className="h-4 w-4" />
                   </a>
-                )}
+                ) : null}
               </div>
             </motion.div>
           </>

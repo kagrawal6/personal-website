@@ -56,7 +56,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const ABOUT_PARAGRAPHS = [
   "I grew up on Doraemon, always amazed by the gadgets from the future and wishing I could build one myself. That curiosity first pulled me into technology: the idea that imagination and engineering could shape the world around us.",
-  "I am a first-year Computer Engineering master's student at Carnegie Mellon University. My interests center on the intersection of computer architecture and systems software, especially in designing efficient platforms for AI and high-performance computing. I am driven by the idea of building the underlying tools and infrastructure that allow future technologies to scale.",
+  "I am a graduate computer engineering student at Carnegie Mellon University. My interests center on the intersection of computer architecture and systems software. I am driven to build the underlying tools and infrastructure that allow future technologies to scale.",
 ]
 
 export const RECENTLY_PLAYED = [
@@ -216,7 +216,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "work-google-capstone",
     company: "Google",
-    title: "Capstone Software Engineering Intern",
+    title: "Capstone Software Engineer Intern",
     start: "Feb 2026",
     end: "May 2026",
     link: "https://github.com/kagrawal6/Iotriage-Google-capstone",
@@ -275,7 +275,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "work-2",
     company: "Endress+Hauser Group",
-    title: "Embedded Software Engineering Co-op",
+    title: "Embedded Software Engineer Co-op",
     start: "May 2025",
     end: "Dec 2025",
     link: "#",
@@ -302,7 +302,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "work-3",
     company: "Endress+Hauser Group",
-    title: "Software Engineering Intern",
+    title: "Software Engineer Intern",
     start: "May 2024",
     end: "Aug 2024",
     link: "#",
@@ -324,7 +324,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "work-5",
     company: "Larsen & Toubro",
-    title: "Software Engineering Intern",
+    title: "Software Engineer Intern",
     start: "May 2023",
     end: "Aug 2023",
     link: "#",

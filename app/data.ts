@@ -190,7 +190,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "iccad-placement",
-    name: "ICCAD 2025 Problem C Incremental Placement Tool (In Progress)",
+    name: "ICCAD 2025 Problem C (In Progress)",
     category: "hardware",
     tech: "C++, Python, Bash, TCL, OpenROAD, Verilog, DEF/LEF, Bookshelf Format, .lib, Docker, Synopsys ECO Format",
     summary: "An ASIC placement optimizer for cell relocation, gate sizing, and buffer insertion to improve power, performance, and area.",

@@ -101,7 +101,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "currency-arbitrage",
-    name: "High-Frequency Currency Arbitrage Engine",
+    name: "High-Frequency Currency Arbitrage",
     category: "software",
     tech: "C++, CUDA, OpenMP, Python, CMake",
     summary: "A parallel FX arbitrage engine that detects profitable trading cycles across currency markets using graph algorithms and GPU acceleration.",

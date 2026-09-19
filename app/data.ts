@@ -228,7 +228,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     id: "work-4",
     company: "University of Wisconsin-Madison",
     title: "Undergraduate Teaching Assistant",
-    start: "September 2023",
+    start: "Sep 2023",
     end: "May 2026",
     link: "#",
     logo: "/images/uw-ece-logo.png",
@@ -257,7 +257,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     id: "work-expo",
-    company: "Engineering EXPO - University of Wisconsin",
+    company: "Engineering EXPO",
     title: "Executive Board Member",
     start: "Sep 2022",
     end: "May 2026",

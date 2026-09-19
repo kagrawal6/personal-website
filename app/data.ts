@@ -157,7 +157,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "c-pasta",
-    name: "C-PASTA (Research Project)",
+    name: "C-PASTA",
     category: "software",
     tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
     summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",

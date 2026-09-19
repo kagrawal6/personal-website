@@ -122,17 +122,6 @@ export const PROJECTS: Project[] = [
     video: "",
   },
   {
-    id: "c-pasta",
-    name: "C-PASTA",
-    category: "software",
-    tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
-    summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",
-    description:
-      "- Researched CPU task partitioning algorithms and built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics.",
-    link: "https://github.com/kagrawal6/C-PASTA-Research-Project.git",
-    video: "",
-  },
-  {
     id: "risc-processor",
     name: "5-Stage Pipelined RISC Processor",
     category: "hardware",
@@ -141,6 +130,17 @@ export const PROJECTS: Project[] = [
     description:
       "- Designed a 16-bit, 5-stage pipelined processor in Verilog based on MIPS R2000, developing the data path and control path with an optimized ALU, forwarding, hazard detection, and branch prediction to minimize stalls.\n- Implemented a pipelined microarchitecture with register file bypassing, forwarding, and branch prediction.\n- Integrated a 2-way set-associative L1 instruction and data cache with direct-mapped and write-back policies.",
     link: "https://github.com/kagrawal6/5-Stage-Pipelined-RISC-Processor.git",
+    video: "",
+  },
+  {
+    id: "c-pasta",
+    name: "C-PASTA",
+    category: "software",
+    tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
+    summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",
+    description:
+      "- Researched CPU task partitioning algorithms and built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics.",
+    link: "https://github.com/kagrawal6/C-PASTA-Research-Project.git",
     video: "",
   },
   {
@@ -215,8 +215,8 @@ export const PROJECTS: Project[] = [
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     id: "work-google-capstone",
-    company: "Google (Capstone)",
-    title: "Software Egineering Intern",
+    company: "Google",
+    title: "Capstone Software Engineering Intern",
     start: "Feb 2026",
     end: "May 2026",
     link: "https://github.com/kagrawal6/Iotriage-Google-capstone",
@@ -252,6 +252,23 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
       {
         label: "View ECE courses",
         link: "https://guide.wisc.edu/courses/e_c_e/",
+      },
+    ],
+  },
+  {
+    id: "work-expo",
+    company: "Engineering EXPO - University of Wisconsin",
+    title: "Executive Board Member",
+    start: "Sep 2022",
+    end: "May 2026",
+    link: "https://engineeringexpo.wisc.edu/",
+    logo: "/images/engineering-expo-logo.png",
+    description:
+      "- Organized a large-scale STEM outreach event at UW–Madison, attracting over 5,000 visitors annually.\n- As Logistics Committee Member, coordinated indoor logistics for 100+ student exhibits, research demos, and industry booths, ensuring smooth setup and an engaging STEM experience for visitors.\n- As Speakers Committee Chair, oversaw the responsibility of finding and scheduling entertaining STEM-related speakers to perform presentations at Expo.\n- As Schools Committee Chair, managed logistics for 1,200 students from 20 schools, coordinating schedules, transportation, and communication.",
+    links: [
+      {
+        label: "Engineering EXPO",
+        link: "https://engineeringexpo.wisc.edu/",
       },
     ],
   },

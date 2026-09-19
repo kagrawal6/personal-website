@@ -452,6 +452,11 @@ export default function Personal() {
                         </li>
                       ))}
                   </ul>
+                  {selectedProject.citation ? (
+                    <p className="mt-4 text-sm leading-6 text-muted-foreground">
+                      {selectedProject.citation}
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </motion.div>

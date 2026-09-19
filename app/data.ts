@@ -9,6 +9,7 @@ export type Project = {
   description: string
   link: string
   video: string
+  citation?: string
 }
 
 export type WorkExperienceSection = {
@@ -134,7 +135,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "c-pasta",
-    name: "C-PASTA",
+    name: "C-PASTA (Research Project)",
     category: "software",
     tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
     summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",
@@ -142,6 +143,8 @@ export const PROJECTS: Project[] = [
       "- Researched CPU task partitioning algorithms and built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics.",
     link: "https://github.com/kagrawal6/C-PASTA-Research-Project.git",
     video: "",
+    citation:
+      "Based on Huang, Zhang, Lin, and Chiu, Parallel and Heterogeneous Timing Analysis: Partition, Algorithm, and System, ISPD 2024.",
   },
   {
     id: "knights-tour",

@@ -122,15 +122,14 @@ export const PROJECTS: Project[] = [
     video: "",
   },
   {
-    id: "xv6-memory",
-    name: "xv6 Memory Mapping with Copy-on-Write",
+    id: "c-pasta",
+    name: "C-PASTA",
     category: "software",
-    tech: "C, xv6, x86 Paging, QEMU, GDB, Makefile, Bash, Python",
-    summary:
-      "An xv6 extension with lazy wmap/wunmap, file-backed maps, ELF protections, and copy-on-write fork.",
+    tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
+    summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",
     description:
-      "- Implemented wmap/wunmap in xv6 for anonymous and file-backed mappings with lazy allocation, page-fault demand paging, and writeback on unmap (and msync without tearing the map down).\n- Added copy-on-write fork with per-page reference counts and software PTE bits so parent/child share frames until a write; MAP_SHARED maps stay shared across processes.\n- Enforced ELF segment read/write permissions so code and rodata fault on illegal stores instead of being silently writable.\n- Exposed memory internals via freemem, pginfo, and a memdemo user program that shows free-page cost under lazy maps and PA/refcount changes under COW.",
-    link: "https://github.com/kagrawal6/xv6-Memory-Mapping-with-Copy-on-Write.git",
+      "- Researched CPU task partitioning algorithms and built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics.",
+    link: "https://github.com/kagrawal6/C-PASTA-Research-Project.git",
     video: "",
   },
   {
@@ -156,14 +155,15 @@ export const PROJECTS: Project[] = [
     video: "",
   },
   {
-    id: "c-pasta",
-    name: "C-PASTA",
+    id: "xv6-memory",
+    name: "xv6 Memory Mapping",
     category: "software",
-    tech: "C++, OpenMP, OpenTimer, DAG-based scheduling, Static Timing Analysis, Linux, Python",
-    summary: "An experimental C++ framework for studying parallel task partitioning strategies for static timing analysis on OpenTimer benchmarks.",
+    tech: "C, xv6, x86 Paging, QEMU, GDB, Makefile, Bash, Python",
+    summary:
+      "An xv6 extension with lazy wmap/wunmap, file-backed maps, ELF protections, and copy-on-write fork.",
     description:
-      "- Researched CPU task partitioning algorithms and built an experimental C++ framework to run C-PASTA on OpenTimer benchmarks, sweeping key parameters and collecting runtime/structural statistics to evaluate clustering heuristics.",
-    link: "https://github.com/kagrawal6/C-PASTA-Research-Project.git",
+      "- Implemented wmap/wunmap in xv6 for anonymous and file-backed mappings with lazy allocation, page-fault demand paging, and writeback on unmap (and msync without tearing the map down).\n- Added copy-on-write fork with per-page reference counts and software PTE bits so parent/child share frames until a write; MAP_SHARED maps stay shared across processes.\n- Enforced ELF segment read/write permissions so code and rodata fault on illegal stores instead of being silently writable.\n- Exposed memory internals via freemem, pginfo, and a memdemo user program that shows free-page cost under lazy maps and PA/refcount changes under COW.",
+    link: "https://github.com/kagrawal6/xv6-Memory-Mapping-with-Copy-on-Write.git",
     video: "",
   },
   {

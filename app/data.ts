@@ -125,10 +125,11 @@ export const PROJECTS: Project[] = [
     id: "xv6-memory",
     name: "xv6 Memory Mapping with Copy-on-Write",
     category: "software",
-    tech: "C, xv6, x86 Paging, GDB, Makefile, Bash, Python",
-    summary: "An xv6 memory-management extension with memory-mapped files, demand paging, page-fault handling, and Copy-on-Write for improved process memory efficiency.",
+    tech: "C, xv6, x86 Paging, QEMU, GDB, Makefile, Bash, Python",
+    summary:
+      "An xv6 memory-management extension with lazy wmap/wunmap, file-backed maps, ELF protections, and copy-on-write fork, plus tooling (freemem, pginfo, msync) to inspect sharing and demand paging.",
     description:
-      "- Implemented memory-mapped file support in xv6, enabling file-backed and anonymous memory allocations with lazy page allocation, demand paging, and page fault handling to optimize memory usage.\n- Optimized process memory with Copy-on-Write, reducing duplication via shared pages and reference counting.\n- Enforced ELF segment protections, preventing unauthorized writes, and ensuring safe concurrent access with locks.",
+      "- Implemented wmap/wunmap in xv6 for anonymous and file-backed mappings with lazy allocation, page-fault demand paging, and writeback on unmap (and msync without tearing the map down).\n- Added copy-on-write fork with per-page reference counts and software PTE bits so parent/child share frames until a write; MAP_SHARED maps stay shared across processes.\n- Enforced ELF segment read/write permissions so code and rodata fault on illegal stores instead of being silently writable.\n- Exposed memory internals via freemem, pginfo, and a memdemo user program that shows free-page cost under lazy maps and PA/refcount changes under COW.",
     link: "https://github.com/kagrawal6/xv6-Memory-Mapping-with-Copy-on-Write.git",
     video: "",
   },

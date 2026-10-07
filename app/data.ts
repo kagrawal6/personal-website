@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
     summary: "A privacy-first desktop search engine that finds local files by meaning using fully on-device semantic retrieval and ranking.",
     description:
       "- Designed and shipped an on-device semantic file retrieval app (Electron/React + Flask) that returns relevant local results in <1s, with all embedding inference running locally—no cloud path for core search.\n- Engineered a retrieve-then-rank search pipeline: SentenceTransformers (MS MARCO/All-MiniLM) embeddings queried via ChromaDB, then hybrid ranking signals to score semantic matches across 25+ file types.\n- Built incremental indexing (SHA-256 change detection + filesystem watching) that reindexes only changed files.",
-    link: "http://filehawk.net",
+    link: "https://www.filehawk.net/",
     video: "",
   },
   {
